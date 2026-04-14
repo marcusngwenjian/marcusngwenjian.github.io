@@ -19,7 +19,9 @@ module.exports = nextConfig
 
 ## GitHub Actions
 
-Workflow Reference: https://github.com/nextjs/deploy-github-pages/blob/main/.github/workflows/deploy.yml
+Use default Next.js workflow by GitHub Actions
+
+![NextJs Workflow](../assets/images/GitHub_NextJsWorkflow.png)
 
 ## GitHub Pages Configuration
 
