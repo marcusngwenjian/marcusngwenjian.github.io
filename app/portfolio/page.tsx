@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/app/_components/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/app/_components/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
