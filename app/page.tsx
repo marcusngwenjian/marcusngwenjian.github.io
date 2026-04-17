@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import { User, ExternalLink, ChevronRight } from "lucide-react";
 import { RadialGlow } from "@/app/_components/background";
-import { Button } from "@/app/_components/button";
+import { Button, buttonSize, buttonVariant } from "@/app/_components/button";
 
 export default function Home() {
   return (
@@ -38,10 +38,10 @@ export default function Home() {
             {/* <button className="px-8 py-4 bg-primary text-black font-bold rounded-lg hover:scale-105 transition-transform flex items-center gap-2">
               Download Resume <ChevronRight size={20} />
             </button> */}
-            <Button className="font-bold transition-transform hover:scale-105" size="lg">
+            <Button className="font-bold transition-transform hover:scale-105" size={buttonSize.Large}>
               Download Resume
             </Button>
-            <Button variant="outline" size="lg">View Work</Button>
+            <Button variant={buttonVariant.Outline} size={buttonSize.Large}>View Work</Button>
             {/* <button className="px-8 py-4 border border-white/20 hover:border-primary transition-colors rounded-lg font-bold flex items-center gap-2">
               View Work
             </button> */}
