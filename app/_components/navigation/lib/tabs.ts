@@ -13,7 +13,7 @@ type Tab = {
   readonly label: string;
   readonly icon: LucideIcon;
   readonly link: string;
-}
+};
 
 export const tabs: ReadonlyArray<Tab> = [
   { id: tabId.home, label: "Home", icon: Home, link: "/" },

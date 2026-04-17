@@ -4,4 +4,4 @@ export const Footer = () => {
       © 2026 Marcus Ng Wen Jian
     </footer>
   );
-}
+};
