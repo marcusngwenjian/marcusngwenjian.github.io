@@ -2,7 +2,8 @@
 
 import { motion } from "motion/react";
 import { User, ExternalLink, ChevronRight } from "lucide-react";
-import BackgroundRadialGlow from "@/app/_components/background/RadialGlow";
+import { RadialGlow } from "@/app/_components/background";
+import { Button } from "@/app/_components/button";
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
       className="min-h-screen flex flex-col md:flex-row items-center justify-center p-8 lg:p-24 relative overflow-hidden"
     >
-      <BackgroundRadialGlow />
+      <RadialGlow />
 
       <div className="z-10 w-full max-w-7xl flex flex-col md:flex-row items-center gap-12">
         <header className="flex-1 space-y-6">
@@ -28,18 +29,22 @@ export default function Home() {
             </span>
           </h1>
 
-          <p className="max-w-md text-gray-400 text-lg leading-relaxed">
+          <p className="max-w-md text-muted-foreground text-lg leading-relaxed">
             Building dynamic and scalable web applications with precision.
             A passionate full-stack developer skilled in Next.js, TypeScript, and high-performance systems.
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
-            <button className="px-8 py-4 bg-primary text-black font-bold rounded-lg hover:scale-105 transition-transform flex items-center gap-2">
+            {/* <button className="px-8 py-4 bg-primary text-black font-bold rounded-lg hover:scale-105 transition-transform flex items-center gap-2">
               Download Resume <ChevronRight size={20} />
-            </button>
-            <button className="px-8 py-4 border border-white/20 hover:border-primary transition-colors rounded-lg font-bold flex items-center gap-2">
+            </button> */}
+            <Button className="font-bold transition-transform hover:scale-105" size="lg">
+              Download Resume
+            </Button>
+            <Button variant="outline" size="lg">View Work</Button>
+            {/* <button className="px-8 py-4 border border-white/20 hover:border-primary transition-colors rounded-lg font-bold flex items-center gap-2">
               View Work
-            </button>
+            </button> */}
           </div>
 
           <div className="flex gap-6 pt-8">

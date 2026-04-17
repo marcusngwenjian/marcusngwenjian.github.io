@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { tabs } from "./lookup/tabs";
+import { tabs } from "./lookup";
 
-export default function NavigationBar() {
+export const NavigationBar = () => {
   const pathname = usePathname();
   return (
     <nav className="fixed bottom-8 left-1/2 -translate-x-1/2 flex gap-4 bg-black/50 backdrop-blur-md p-4 rounded-full border border-white/10">
