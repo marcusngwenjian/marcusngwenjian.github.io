@@ -21,12 +21,18 @@ This skill automates the process of fetching a shadcn component, refactoring it 
         * Prop types (e.g., `type` vs. `interface`).
         * Import paths (especially the `cn` utility location).
     * For every **React Component** found in that file:
-        * Create a new file: `@/app/_components/<DESIRED_COMPONENT>/<ComponentName>.tsx`.
-        * Export using a `const` arrow function (e.g., `export const Button = (...) => { ... }`).
-        * Auto-fix and resolve all relevant imports (e.g., `clsx`, `tailwind-merge`, or sub-components).
-    * For every **Utility Function** or **Constant**:
-        * Create a separate file in the same directory: `@/app/_components/<DESIRED_COMPONENT>/lib/<Name>.ts`.
-        * Export them individually.
+        * **File Creation:** Create a new file: `@/app/_components/<DESIRED_COMPONENT>/<ComponentName>.tsx`.
+        * **Prop Type Extraction:** Transform inline prop definitions into a formal type alias named <ComponentName>Props
+          * Example: Convert `({ className, ...props }: ComponentProps<"span">)` to `type AvatarBadgeProps = ComponentProps<"span">;` defined above the component.
+        * **Component Export:** Export using a `const` arrow function (e.g., `export const Button = (...) => { ... }`).
+        * **Auto-fix:** Resolve all relevant imports (e.g., `clsx`, `tailwind-merge`, or sub-components).
+    * For every **Constant or Variant**:
+        * **Consolidation Rule:** Do not create separate files for every constant. Instead, consolidate all non-component logic into: `@/app/_components/<DESIRED_COMPONENT>/lib/constants.ts`.
+        * **Variant Mapping (Enums):** For all `cva` variant groups (e.g., `variant`, `size`), transform the raw strings into camelCase `as const` objects.
+          * Naming: `<componentName><VariantGroup>` (e.g., `buttonVariant`, `buttonSize`).
+          * Mapping: Map descriptive keys to the shadcn string values (e.g., `default: "default"`, `small: "sm"`).
+        * **CVA Implementation:** In the component file, import these constants and use computed property names (e.g., `[buttonVariant.default]: "..."`) to define the styles within the `cva` function.
+        * **Collision Prevention:** If multiple components share the same constant file, ensure every constant is prefixed with the component name to prevent barrel export conflicts in the `index.ts`
     * Note: Ensure the index file provides a single point of entry for both UI logic and utilities.
 
 3.  **Aggregation**
@@ -60,3 +66,44 @@ This skill automates the process of fetching a shadcn component, refactoring it 
     export * from './AlertDescription';
     export * from './lib/constants';
     ```
+
+### Implementation Example (Mapping Pattern)
+
+**From (shadcn source):**
+```typescript
+const buttonVariants = cva("...", {
+  variants: {
+    variant: { default: "...", outline: "..." },
+    size: { default: "...", sm: "..." }
+  }
+})
+```
+
+**To (Refactored):**
+* `lib/constants.ts`
+  ```typescript
+  export const buttonVariant = {
+    default: "default",
+    outline: "outline",
+  } as const;
+
+  export const buttonSize = {
+    default: "default",
+    small: "sm",
+  } as const;
+  ```
+* `Button.tsx`
+  ```typescript
+  import { buttonVariant, buttonSize } from "./lib/constants";
+
+  const buttonVariants = cva("...", {
+    variants: {
+      variant: { [buttonVariant.default]: "...", [buttonVariant.outline]: "..." },
+      size: { [buttonSize.default]: "...", [buttonSize.small]: "..." },
+    },
+    defaultVariants: {
+      variant: buttonVariant.default,
+      size: buttonSize.default,
+    }
+  });
+  ```
