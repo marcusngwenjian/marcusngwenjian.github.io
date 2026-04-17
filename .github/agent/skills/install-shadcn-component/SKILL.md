@@ -4,12 +4,15 @@ This skill automates the process of fetching a shadcn component, refactoring it 
 
 ## Instructions
 
-1.  **Installation**
-    * Run `npx shadcn-ui@latest add <DESIRED_COMPONENT>`.
-    * **Prompt Responses:**
-        * `Create components.json?`: Yes
-        * `Component Library`: Base
-        * `Preset`: Vega
+1.  **Installation & Configuration**
+   * First, ensure the project is initialized with the following style:
+     ```bash
+     npx shadcn@latest init --base base --preset vega --yes
+     ```
+   * Then, install the desired component:
+     ```bash
+     npx shadcn@latest add <DESIRED_COMPONENT> --yes
+     ```
     * *Note: Ensure the component is downloaded into the default `@/components/ui` directory.*
 
 2.  **Refactoring Logic**
