@@ -1,10 +1,12 @@
-import * as React from "react"
+import { ComponentProps } from "react"
 import { cn } from "@/app/_utilities/classname"
+
+type CardDescriptionProps = ComponentProps<"div">;
 
 export const CardDescription = ({
   className,
   ...props
-}: React.ComponentProps<"div">) => {
+}: CardDescriptionProps) => {
   return (
     <div
       data-slot="card-description"
