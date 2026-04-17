@@ -1,9 +1,9 @@
-import { ComponentProps } from "react"
-import { cn } from "@/app/_utilities/classname"
+import { ComponentProps } from "react";
+import { cn } from "@/app/_utilities/classname";
 
 type CardProps = ComponentProps<"div"> & {
-  size?: "default" | "sm"
-}
+  size?: "default" | "sm";
+};
 
 export const Card = ({
   className,
@@ -20,5 +20,5 @@ export const Card = ({
       )}
       {...props}
     />
-  )
-}
+  );
+};

@@ -1,5 +1,5 @@
-import { ComponentProps } from "react"
-import { cn } from "@/app/_utilities/classname"
+import { ComponentProps } from "react";
+import { cn } from "@/app/_utilities/classname";
 
 type CardTitleProps = ComponentProps<"div">;
 
@@ -16,5 +16,5 @@ export const CardTitle = ({
       )}
       {...props}
     />
-  )
-}
+  );
+};

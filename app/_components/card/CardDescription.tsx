@@ -1,5 +1,5 @@
-import { ComponentProps } from "react"
-import { cn } from "@/app/_utilities/classname"
+import { ComponentProps } from "react";
+import { cn } from "@/app/_utilities/classname";
 
 type CardDescriptionProps = ComponentProps<"div">;
 
@@ -13,5 +13,5 @@ export const CardDescription = ({
       className={cn("text-sm text-muted-foreground", className)}
       {...props}
     />
-  )
-}
+  );
+};
