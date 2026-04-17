@@ -1,2 +1,2 @@
 export * from "./NavigationBar";
-export * from "./lookup";
+export * from "./lib/tabs";

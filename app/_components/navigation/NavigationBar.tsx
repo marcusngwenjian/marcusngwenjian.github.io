@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { tabs } from "./lookup";
+import { tabs } from "./lib/tabs";
 
 export const NavigationBar = () => {
   const pathname = usePathname();
