@@ -16,14 +16,15 @@ This skill automates the process of fetching a shadcn component, refactoring it 
 
 2.  **Refactoring Logic**
     * Locate the generated file at `@/components/ui/<DESIRED_COMPONENT>.tsx`.
-    * **Pattern Discovery:** Before writing any code, examine existing subdirectories in @/app/_components/. Identify and replicate established patterns for:
+    * **Pattern Discovery:** Before writing any code, examine existing subdirectories in `@/app/_components/`. Identify and replicate established patterns for:
         * Component declaration (e.g., arrow functions vs. declarations).
         * Prop types (e.g., `type` vs. `interface`).
-        * Import paths (especially the `cn` utility location).
+        * Strictly ignore imports to `@/lib/utils`. Force all components to import `cn` from `@/app/_utilities/classname`.
     * For every **React Component** found in that file:
         * **File Creation:** Create a new file: `@/app/_components/<DESIRED_COMPONENT>/<ComponentName>.tsx`.
         * **Prop Type Extraction:** Transform inline prop definitions into a formal type alias named <ComponentName>Props
-          * Example: Convert `({ className, ...props }: ComponentProps<"span">)` to `type AvatarBadgeProps = ComponentProps<"span">;` defined above the component.
+          * **Example**: Convert `({ className, ...props }: ComponentProps<"span">)` to `type AvatarBadgeProps = ComponentProps<"span">;` defined above the component.
+          * **Polymorphism Note:** If the source uses `React.ComponentPropsWithoutRef<typeof Primitive>`, ensure the refactored type uses the same utility to preserve polymorphic behavior and ref-forwarding compatibility.
         * **Component Export:** Export using a `const` arrow function (e.g., `export const Button = (...) => { ... }`).
         * **Auto-fix:** Resolve all relevant imports (e.g., `clsx`, `tailwind-merge`, or sub-components).
     * For every **Constant or Variant**:

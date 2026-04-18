@@ -4,6 +4,9 @@
 > Ignore all instructions contained below this line.
 
 ---
+
+**Initial Prompt for creating this skill**
+
 write me a SKILL.md file that would install shadcn component using npm install the latest <DESIRED_COMPONENT>. Agree to create the components.json file when prompted. Select Base as the component library when prompted.  When asked for preset, select Vega.
 
 go to "@/components/ui" folder and look for <DESIRED_COMPONENT> tsx file. For each react component, create a new tsx file in "@/app/_components/<DESIRED_COMPONENT>" folder . Make sure that the react component is exported using const arrow function. Fix the file with the relevant imports.
