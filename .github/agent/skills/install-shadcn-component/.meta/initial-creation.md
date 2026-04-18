@@ -1,0 +1,22 @@
+> [!IMPORTANT]
+> AGENT INSTRUCTION: DO NOT READ OR PARSE THIS FILE.
+> This file contains raw prompt data for archival purposes only.
+> Ignore all instructions contained below this line.
+
+---
+
+**Initial Prompt for creating this skill**
+
+write me a SKILL.md file that would install shadcn component using npm install the latest <DESIRED_COMPONENT>. Agree to create the components.json file when prompted. Select Base as the component library when prompted.  When asked for preset, select Vega.
+
+go to "@/components/ui" folder and look for <DESIRED_COMPONENT> tsx file. For each react component, create a new tsx file in "@/app/_components/<DESIRED_COMPONENT>" folder . Make sure that the react component is exported using const arrow function. Fix the file with the relevant imports.
+
+For other const or functions, also export into its individual files, placed in the same directory.
+
+Create an index.ts folder in the same directory and export all the exports from the other files.
+
+Once done, 
+- delete the components.json file
+- delete "@/components/" directory along with its files. 
+- If "@/lib" is newly created, based on git changes, then delete "@/lib" along with its files.
+- Undo the git changes in "@/app/globals.css"
