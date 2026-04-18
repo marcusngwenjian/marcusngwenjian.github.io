@@ -1,16 +1,22 @@
 "use client";
 
 import { motion } from "motion/react";
+import {
+  MapPin, Mail, ExternalLink, Terminal,
+  Code2, Database, Layout, Star, Award, Briefcase,
+  GraduationCap, PlayCircle, BookOpen
+} from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/app/_components/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/app/_components/avatar";
 import { Badge } from "@/app/_components/badge";
 import { Progress } from "@/app/_components/progress";
 import { Separator } from "@/app/_components/separator";
-import {
-  MapPin, Mail, ExternalLink, Terminal,
-  Code2, Database, Layout, Star, Award, Briefcase,
-  GraduationCap, PlayCircle
-} from "lucide-react";
+import { SkillSectionCard } from "./_components/SkillSectionCard";
+import { CertificationSectionCard } from "./_components/CertificationSectionCard";
+import { EducationSectionCard } from "./_components/EducationSectionCard";
+import { LanguageSectionCard } from "./_components/LanguageSectionCard";
+import { WorkExperienceSectionCard } from "./_components/WorkExperienceSectionCard";
+import { TestimonialSectionCard } from "./_components/TestimonialSectionCard";
 
 export default function Portfolio() {
   return (
@@ -30,13 +36,13 @@ export default function Portfolio() {
                 <AvatarFallback>MC</AvatarFallback>
               </Avatar>
               <div>
-                <h2 className="text-2xl font-bold text-white flex items-center justify-center gap-2">
-                  Main Character <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                <h2 className="text-xl font-bold text-white flex items-center justify-center gap-2">
+                  Marcus Ng Wen Jian <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 </h2>
-                <p className="text-sm text-zinc-400">mc.protagonist@anime.dev</p>
+                <p className="text-sm text-zinc-400">Software Engineer</p>
               </div>
               <Badge variant="outline" className="border-primary text-primary w-full justify-center py-1">
-                <Star className="w-3 h-3 mr-2" /> Level 99 Full Stack Dev
+                <Star className="w-3 h-3 mr-2" /> Level 99 Full Stack Developer
               </Badge>
             </CardContent>
           </Card>
@@ -94,18 +100,18 @@ export default function Portfolio() {
           className="md:col-span-4 lg:col-span-3 flex flex-col gap-4"
         >
           <Card className="bg-zinc-900 border-zinc-800">
-            <CardHeader className="pb-2">
+            <CardHeader>
               <CardTitle className="text-lg text-white">Info</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
                   <p className="text-zinc-500 flex items-center gap-1"><Terminal className="w-3 h-3" /> Role</p>
-                  <p className="text-zinc-200">Full Stack Dev</p>
+                  <p className="text-zinc-200">Full Stack</p>
                 </div>
                 <div>
                   <p className="text-zinc-500 flex items-center gap-1"><MapPin className="w-3 h-3" /> Location</p>
-                  <p className="text-zinc-200">Tokyo, Japan</p>
+                  <p className="text-zinc-200">Singapore</p>
                 </div>
               </div>
               <Separator className="bg-zinc-800" />
@@ -120,58 +126,11 @@ export default function Portfolio() {
             </CardContent>
           </Card>
 
-          <Card className="bg-zinc-900 border-zinc-800">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-lg text-white">Skill Tree</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-zinc-300 flex items-center gap-1"><Layout className="w-3 h-3" /> Frontend</span>
-                    <span className="text-primary">Lv. 90</span>
-                  </div>
-                  <Progress value={90} className="h-1 bg-zinc-800" />
-                </div>
-                <div>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-zinc-300 flex items-center gap-1"><Database className="w-3 h-3" /> Backend</span>
-                    <span className="text-primary">Lv. 85</span>
-                  </div>
-                  <Progress value={85} className="h-1 bg-zinc-800" />
-                </div>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {["React", "Next.js", "TypeScript", "Node.js", "Python", "AWS"].map(skill => (
-                    <Badge key={skill} variant="secondary" className="bg-zinc-800 text-zinc-300 hover:bg-zinc-700">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <SkillSectionCard />
+          <CertificationSectionCard />
+          <EducationSectionCard />
+          <LanguageSectionCard />
 
-          <Card className="bg-zinc-900 border-zinc-800">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-lg text-white">Education & Certs</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="flex gap-3">
-                <div className="mt-1"><GraduationCap className="w-4 h-4 text-primary" /></div>
-                <div>
-                  <p className="text-sm font-medium text-white">B.S. Computer Science</p>
-                  <p className="text-xs text-zinc-500">Anime Tech University • 2020</p>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <div className="mt-1"><Award className="w-4 h-4 text-primary" /></div>
-                <div>
-                  <p className="text-sm font-medium text-white">AWS Certified Solutions Architect</p>
-                  <p className="text-xs text-zinc-500">Amazon Web Services • 2023</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </motion.div>
 
         {/* MIDDLE COLUMN: Work Experience */}
@@ -181,29 +140,7 @@ export default function Portfolio() {
           transition={{ delay: 0.3 }}
           className="md:col-span-4 lg:col-span-5"
         >
-          <Card className="bg-zinc-900 border-zinc-800 h-full">
-            <CardHeader>
-              <CardTitle className="text-lg text-white flex items-center gap-2">
-                <Briefcase className="w-5 h-5 text-primary" /> Quest Log (Experience)
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-6">
-                {[
-                  { role: "Senior Frontend Engineer", company: "CyberDyne Systems", date: "2023 - Present", desc: "Leading the frontend guild. Architecting the new Next.js micro-frontends." },
-                  { role: "Full Stack Developer", company: "Nerv Corp", date: "2021 - 2023", desc: "Built the Evangelion monitoring dashboard using React and WebSockets." },
-                  { role: "Junior Developer", company: "Capsule Corp", date: "2020 - 2021", desc: "Maintained legacy Dragon Radar systems. Migrated from jQuery to React." }
-                ].map((job, i) => (
-                  <div key={i} className="relative pl-6 border-l border-zinc-800 last:border-0 pb-6 last:pb-0">
-                    <div className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-primary shadow-[0_0_8px_rgba(0,255,0,0.5)]" />
-                    <h4 className="text-base font-bold text-white">{job.role}</h4>
-                    <p className="text-sm text-primary mb-2">{job.company} <span className="text-zinc-500 ml-2">{job.date}</span></p>
-                    <p className="text-sm text-zinc-400">{job.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+          <WorkExperienceSectionCard />
         </motion.div>
 
         {/* RIGHT COLUMN: Testimonials */}
@@ -213,32 +150,7 @@ export default function Portfolio() {
           transition={{ delay: 0.4 }}
           className="md:col-span-4 lg:col-span-4"
         >
-          <Card className="bg-zinc-900 border-zinc-800 h-full">
-            <CardHeader>
-              <CardTitle className="text-lg text-white">Guild Members Say</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {[
-                { name: "Asuka L.", role: "Lead Designer", text: "Baka! But his code is actually pretty good. Always delivers on time." },
-                { name: "Goku Son", role: "Product Manager", text: "His power level is insane! He built that feature faster than instant transmission." },
-                { name: "L Lawliet", role: "Security Engineer", text: "I've analyzed his code. The probability of bugs is less than 1%." }
-              ].map((test, i) => (
-                <div key={i} className="bg-zinc-950 p-4 rounded-lg border border-zinc-800">
-                  <div className="flex items-center gap-3 mb-2">
-                    <Avatar className="w-8 h-8">
-                      <AvatarImage src={`https://picsum.photos/seed/${test.name}/100/100`} />
-                      <AvatarFallback>{test.name[0]}</AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <p className="text-sm font-bold text-white">{test.name}</p>
-                      <p className="text-xs text-zinc-500">{test.role}</p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-zinc-400 italic">"{test.text}"</p>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
+          <TestimonialSectionCard />
         </motion.div>
 
         {/* BOTTOM: Past Projects */}

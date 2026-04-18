@@ -9,14 +9,14 @@
   --color-foreground: oklch(0.9461 0 0);
   --color-primary: var(--brand);
   --color-primary-foreground: oklch(0.1014 0.01 334.58);
-  --color-secondary: oklch(0.3 0.01 48.38);
-  --color-secondary-foreground: oklch(0.98 0 0);
+  --color-secondary: var(--color-zinc-800);
+  --color-secondary-foreground: oklch(0.9461 0 0);
+  --color-muted: var(--color-zinc-800);
+  --color-muted-foreground: var(--color-gray-400);
+  --color-muted-secondary-foreground: var(--color-zinc-500);
+  --color-card: var(--color-zinc-900);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@theme inline {
-  --color-muted-foreground: var(--color-gray-400);
 }
 
 @layer base {
