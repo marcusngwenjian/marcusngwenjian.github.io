@@ -131,14 +131,14 @@ export default function Portfolio() {
                     <span className="text-zinc-300 flex items-center gap-1"><Layout className="w-3 h-3" /> Frontend</span>
                     <span className="text-primary">Lv. 90</span>
                   </div>
-                  <Progress value={90} className="h-1 bg-zinc-800" indicatorClassName="bg-primary" />
+                  <Progress value={90} className="h-1 bg-zinc-800" />
                 </div>
                 <div>
                   <div className="flex justify-between text-sm mb-1">
                     <span className="text-zinc-300 flex items-center gap-1"><Database className="w-3 h-3" /> Backend</span>
                     <span className="text-primary">Lv. 85</span>
                   </div>
-                  <Progress value={85} className="h-1 bg-zinc-800" indicatorClassName="bg-primary" />
+                  <Progress value={85} className="h-1 bg-zinc-800" />
                 </div>
                 <div className="flex flex-wrap gap-2 pt-2">
                   {["React", "Next.js", "TypeScript", "Node.js", "Python", "AWS"].map(skill => (
