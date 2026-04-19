@@ -32,8 +32,16 @@ export default function Portfolio() {
           <Card className="bg-zinc-900 border-zinc-800 h-full">
             <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
               <Avatar className="w-24 h-24 border-2 border-primary">
-                <AvatarImage src="https://picsum.photos/seed/anime/200/200" />
-                <AvatarFallback>MC</AvatarFallback>
+                {/* <AvatarImage src="https://picsum.photos/seed/anime/200/200" /> */}
+                {/* <AvatarImage src="/images/avatar.gif" /> */}
+                <video
+                  src="/videos/avatar-adjust-spectacles.mp4"
+                  autoPlay
+                  muted
+                  playsInline
+                  className="absolute inset-0 h-full w-full object-cover outline-none border-none"
+                />
+                {/* <AvatarFallback>MC</AvatarFallback> */}
               </Avatar>
               <div>
                 <h2 className="text-xl font-bold text-white flex items-center justify-center gap-2">
