@@ -1,13 +1,8 @@
 "use client";
 
 import { motion } from "motion/react";
-import {
-  MapPin, Mail, ExternalLink, Terminal,
-  Code2, Database, Layout, Star, Award, Briefcase,
-  GraduationCap, PlayCircle, BookOpen
-} from "lucide-react";
+import { MapPin, ExternalLink, Terminal, Code2, PlayCircle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/app/_components/card";
-import { Badge } from "@/app/_components/badge";
 import { Separator } from "@/app/_components/separator";
 import { SkillSectionCard } from "./_components/SkillSectionCard";
 import { CertificationSectionCard } from "./_components/CertificationSectionCard";
@@ -15,7 +10,7 @@ import { EducationSectionCard } from "./_components/EducationSectionCard";
 import { LanguageSectionCard } from "./_components/LanguageSectionCard";
 import { WorkExperienceSectionCard } from "./_components/WorkExperienceSectionCard";
 import { TestimonialSectionCard } from "./_components/TestimonialSectionCard";
-import { MainAvatar } from "./_components/MainAvatar";
+import { MainAvatarSectionCard } from "./_components/MainAvatarSectionCard";
 
 export default function Portfolio() {
   return (
@@ -28,20 +23,7 @@ export default function Portfolio() {
           animate={{ opacity: 1, y: 0 }}
           className="md:col-span-4 lg:col-span-3"
         >
-          <Card className="bg-zinc-900 border-zinc-800 h-full">
-            <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
-              <MainAvatar />
-              <div>
-                <h2 className="text-xl font-bold text-white flex items-center justify-center gap-2">
-                  Marcus Ng Wen Jian <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                </h2>
-                <p className="text-sm text-zinc-400">Software Engineer</p>
-              </div>
-              <Badge variant="outline" className="border-primary text-primary w-full justify-center py-1">
-                <Star className="w-3 h-3 mr-2" /> Level 99 Full Stack Developer
-              </Badge>
-            </CardContent>
-          </Card>
+          <MainAvatarSectionCard />
         </motion.div>
 
         {/* TOP MIDDLE & RIGHT: Stats */}
