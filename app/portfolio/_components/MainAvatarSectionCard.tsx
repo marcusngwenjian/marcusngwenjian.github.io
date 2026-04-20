@@ -6,7 +6,7 @@ import { MainAvatar } from "./MainAvatar";
 
 export const MainAvatarSectionCard = () => {
   return (
-    <Card className="border-zinc-800 h-full">
+    <Card className="h-full">
       <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
         <MainAvatar />
         <div>

@@ -4,7 +4,7 @@ type WorkExperienceSectionCardItemProps = WorkExperience;
 
 export const WorkExperienceSectionCardItem = ({ role, company, date, achievements }: WorkExperienceSectionCardItemProps) => {
   return (
-    <div className="relative pl-6 border-l border-zinc-800 last:border-0 pb-6 last:pb-0">
+    <div className="relative pl-6 border-l border-border last:border-0 pb-6 last:pb-0">
       <div className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-primary shadow-[0_0_8px_rgba(0,255,0,0.5)]" />
       <h4 className="text-base font-bold text-foreground">{role}</h4>
       <p className="text-sm text-primary mb-2">

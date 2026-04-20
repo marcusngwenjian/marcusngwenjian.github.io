@@ -14,7 +14,7 @@ export const SectionCardWrapper = ({
   title,
 }: SectionCardWrapperProps) => {
   return (
-    <Card className={cn("border-zinc-800", className)}>
+    <Card className={className}>
       <CardHeader>
         <CardTitle className="text-lg text-foreground">{title}</CardTitle>
       </CardHeader>
