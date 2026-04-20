@@ -4,7 +4,7 @@ import { workExperiences } from "../_data/job";
 
 export const WorkExperienceSectionCard = () => {
   return (
-    <SectionCardWrapper title="Work Experience">
+    <SectionCardWrapper title="Job Advancement">
       <div>
         {workExperiences.map((job, i) => (
           <WorkExperienceSectionCardItem key={i} {...job} />
