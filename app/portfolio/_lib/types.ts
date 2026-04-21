@@ -33,3 +33,15 @@ export type Testimonial = {
   readonly avatar: string;
   readonly quote: string;
 };
+
+export type PassiveTrait = {
+  readonly icon: LucideIcon;
+  readonly name: string;
+  readonly description: string;
+  readonly effect: string;
+};
+
+export type SkillAbility = {
+  readonly name: string;
+  readonly description: string;
+};

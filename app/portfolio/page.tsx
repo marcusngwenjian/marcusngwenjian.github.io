@@ -11,6 +11,7 @@ import { LanguageSectionCard } from "./_components/LanguageSectionCard";
 import { WorkExperienceSectionCard } from "./_components/WorkExperienceSectionCard";
 import { TestimonialSectionCard } from "./_components/TestimonialSectionCard";
 import { MainAvatarSectionCard } from "./_components/MainAvatarSectionCard";
+import { PassiveTraitSectionCard } from "./_components/PassiveTraitSectionCard";
 
 export default function Portfolio() {
   return (
@@ -26,51 +27,18 @@ export default function Portfolio() {
           <MainAvatarSectionCard />
         </motion.div>
 
-        {/* TOP MIDDLE & RIGHT: Stats */}
+        {/* TOP MIDDLE & RIGHT: Abilities */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="md:col-span-8 lg:col-span-9 grid grid-cols-1 sm:grid-cols-3 gap-4"
+          className="md:col-span-8 lg:col-span-9 grid grid-cols-1 lg:grid-cols-3 gap-4"
         >
-          <Card className="bg-zinc-900 border-zinc-800">
-            <CardContent className="p-6 flex flex-col items-center justify-center h-full">
-              <div className="relative w-24 h-24 flex items-center justify-center mb-2">
-                <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="45" fill="none" stroke="#27272a" strokeWidth="8" />
-                  <circle cx="50" cy="50" r="45" fill="none" stroke="var(--color-primary)" strokeWidth="8" strokeDasharray="282.7" strokeDashoffset="56.5" className="drop-shadow-[0_0_8px_rgba(0,255,0,0.5)]" />
-                </svg>
-                <div className="absolute text-2xl font-bold text-white">5.0</div>
-              </div>
-              <p className="font-semibold text-white">Years EXP</p>
-              <p className="text-xs text-zinc-500 text-center mt-1">Grinding since 2021</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-zinc-900 border-zinc-800">
-            <CardContent className="p-6 flex flex-col items-center justify-center h-full">
-              <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center mb-4 text-primary">
-                <Code2 className="w-6 h-6" />
-              </div>
-              <h3 className="text-2xl font-bold text-white">42</h3>
-              <p className="font-semibold text-white">Projects Completed</p>
-              <p className="text-xs text-zinc-500 text-center mt-1">Quests finished</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-zinc-900 border-zinc-800">
-            <CardContent className="p-6 flex flex-col items-center justify-center h-full">
-              <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center mb-4 text-primary">
-                <ExternalLink className="w-6 h-6" />
-              </div>
-              <h3 className="text-2xl font-bold text-white">10k+</h3>
-              <p className="font-semibold text-white">Commits</p>
-              <p className="text-xs text-zinc-500 text-center mt-1">Power level over 9000</p>
-            </CardContent>
-          </Card>
+          <PassiveTraitSectionCard className="lg:col-span-1" />
+          <SkillSectionCard className="lg:col-span-2" />
         </motion.div>
 
-        {/* LEFT COLUMN: Info & Skills */}
+        {/* LEFT COLUMN: Info */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -104,7 +72,7 @@ export default function Portfolio() {
             </CardContent>
           </Card>
 
-          <SkillSectionCard />
+          {/* <SkillSectionCard /> */}
           <CertificationSectionCard />
           <EducationSectionCard />
           <LanguageSectionCard />
