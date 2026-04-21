@@ -1,7 +1,5 @@
 import { LucideIcon } from "lucide-react";
 
-export type Skill = string;
-
 export type Certification = {
   readonly name: string;
   readonly company: string;

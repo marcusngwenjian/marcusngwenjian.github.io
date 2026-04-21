@@ -14,11 +14,8 @@ export const SkillSectionCardItemWrapper = ({ icon: Icon, type, name, children }
     <div className="flex gap-3">
       <div className="mt-1"><Icon className="w-4 h-4 text-primary" /></div>
       <div className="flex flex-col flex-1">
-        <div className="flex items-center justify-between gap-2">
-          <span className="text-xs font-bold text-foreground uppercase tracking-tight">{name}</span>
-          <span className="text-xs font-bold text-muted-secondary-foreground bg-primary/10 px-1 rounded whitespace-nowrap">{type}</span>
-        </div>
-        {/* <p className="text-xs text-muted-foreground mt-0.5">{children}</p> */}
+        <span className="text-xs font-bold text-foreground uppercase tracking-tight">{name}</span>
+        <span className="text-[10px] w-fit font-bold text-muted-foreground bg-primary/10 px-1 rounded whitespace-nowrap mt-0.5">{type}</span>
         {children}
       </div>
     </div>
