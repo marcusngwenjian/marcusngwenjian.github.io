@@ -8,8 +8,8 @@ type AvatarProps = AvatarPrimitive.Root.Props & {
 };
 
 export const Avatar = ({
-  className,
   size = "default",
+  className,
   ...props
 }: AvatarProps) => {
   return (

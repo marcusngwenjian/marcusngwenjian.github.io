@@ -6,8 +6,8 @@ import { cn } from "@/app/_utilities/classname";
 type SeparatorProps = SeparatorPrimitive.Props;
 
 export const Separator = ({
-  className,
   orientation = "horizontal",
+  className,
   ...props
 }: SeparatorProps) => {
   return (

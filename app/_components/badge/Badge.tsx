@@ -26,9 +26,9 @@ const badgeVariants = cva(
 );
 
 export const Badge = ({
-  className,
   variant = badgeVariant.default,
   render,
+  className,
   ...props
 }: BadgeProps) => {
   return useRender({

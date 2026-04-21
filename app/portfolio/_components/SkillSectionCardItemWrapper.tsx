@@ -3,13 +3,13 @@ import { ReactNode } from "react";
 import { LucideIcon } from "lucide-react";
 
 type SkillSectionCardItemWrapperProps = {
+  children: ReactNode;
   icon: LucideIcon;
   type: string;
   name: string;
-  children: ReactNode;
 };
 
-export const SkillSectionCardItemWrapper = ({ icon: Icon, type, name, children }: SkillSectionCardItemWrapperProps) => {
+export const SkillSectionCardItemWrapper = ({ children, icon: Icon, type, name }: SkillSectionCardItemWrapperProps) => {
   return (
     <div className="flex gap-3">
       <div className="mt-1"><Icon className="w-4 h-4 text-primary" /></div>

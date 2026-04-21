@@ -10,14 +10,15 @@ type DialogHeaderProps = ComponentProps<"div"> & {
 
 export const DialogHeader = ({
   children,
-  className,
   hideCloseIcon = false,
   hideDivider = false,
+  className,
+  ...props
 }: DialogHeaderProps) => {
   const { closeDialog } = useDialogContext();
 
   return (
-    <div className={cn("flex justify-between items-center pt-6 px-6", !hideDivider && "border-b border-muted p-6", className)}>
+    <div className={cn("flex justify-between items-center pt-6 px-6", !hideDivider && "border-b border-muted p-6", className)} {...props}>
       {children}
       {!hideCloseIcon && (
         <button

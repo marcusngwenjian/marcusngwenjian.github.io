@@ -10,9 +10,9 @@ type DialogFooterProps = ComponentProps<"div"> & {
 };
 
 export const DialogFooter = ({
-  className,
-  showCloseButton = false,
   children,
+  showCloseButton = false,
+  className,
   ...props
 }: DialogFooterProps) => {
   return (
