@@ -12,6 +12,7 @@ import { WorkExperienceSectionCard } from "./_components/WorkExperienceSectionCa
 import { TestimonialSectionCard } from "./_components/TestimonialSectionCard";
 import { MainAvatarSectionCard } from "./_components/MainAvatarSectionCard";
 import { PassiveTraitSectionCard } from "./_components/PassiveTraitSectionCard";
+import { IntelSectionCard } from "./_components/IntelSectionCard";
 
 export default function Portfolio() {
   return (
@@ -45,9 +46,9 @@ export default function Portfolio() {
           transition={{ delay: 0.2 }}
           className="md:col-span-4 lg:col-span-3 flex flex-col gap-4"
         >
-          <Card className="bg-zinc-900 border-zinc-800">
+          {/* <Card className="bg-zinc-900 border-zinc-800">
             <CardHeader>
-              <CardTitle className="text-lg text-white">Info</CardTitle>
+              <CardTitle className="text-lg text-white">Intel</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-2 gap-4 text-sm">
@@ -70,7 +71,9 @@ export default function Portfolio() {
                 </a>
               </div>
             </CardContent>
-          </Card>
+          </Card> */}
+
+          <IntelSectionCard />
 
           {/* <SkillSectionCard /> */}
           <CertificationSectionCard />
