@@ -1,13 +1,11 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { NavigationBar } from "@/app/_components/navigation";
 import { Footer } from "@/app/_components/html";
 import { Wallpaper } from "@/app/_components/background";
+import { cn } from "./_utilities/classname";
 import "./globals.css";
-import { cn } from "@/lib/utils";
-
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -66,7 +64,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
+      className={cn("antialiased", geistSans.variable, geistMono.variable, "font-sans")}
     >
       <body className="min-h-screen">
         <main aria-live="polite">
