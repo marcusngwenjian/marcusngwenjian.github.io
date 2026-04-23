@@ -48,7 +48,7 @@ export default function Home() {
         <div className="flex-1 " aria-hidden="true">
           <div className="relative aspect-square w-full max-w-md mx-auto z-0">
             <Image
-              src="/images/splash-art.png"
+              src="/images/splash-art.webp"
               fill
               alt="Splash Art"
               className="object-contain lg:scale-175"
