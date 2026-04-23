@@ -3,18 +3,18 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/app/_components/card
 import { cn } from "@/app/_utilities/classname";
 
 interface SectionCardWrapperProps {
-  className?: string;
   children: ReactNode;
   title: string;
+  className?: string;
 }
 
 export const SectionCardWrapper = ({
-  className,
   children,
   title,
+  className,
 }: SectionCardWrapperProps) => {
   return (
-    <Card className={cn("border-zinc-800", className)}>
+    <Card className={className}>
       <CardHeader>
         <CardTitle className="text-lg text-foreground">{title}</CardTitle>
       </CardHeader>

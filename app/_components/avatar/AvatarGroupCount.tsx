@@ -6,7 +6,7 @@ type AvatarGroupCountProps = ComponentProps<"div">;
 export const AvatarGroupCount = ({
   className,
   ...props
-}: ComponentProps<"div">) => {
+}: AvatarGroupCountProps) => {
   return (
     <div
       data-slot="avatar-group-count"

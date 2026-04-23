@@ -8,9 +8,9 @@ import { ProgressIndicator } from "./ProgressIndicator";
 type ProgressProps = ProgressPrimitive.Root.Props;
 
 export const Progress = ({
-  className,
   children,
   value,
+  className,
   ...props
 }: ProgressProps) => {
   return (

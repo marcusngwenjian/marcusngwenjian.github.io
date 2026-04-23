@@ -1,8 +1,10 @@
+import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { NavigationBar } from "@/app/_components/navigation";
 import { Footer } from "@/app/_components/html";
 import { Wallpaper } from "@/app/_components/background";
+import { cn } from "./_utilities/classname";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,7 +29,7 @@ export const metadata: Metadata = {
 // export default function RootLayout({
 //   children,
 // }: Readonly<{
-//   children: React.ReactNode;
+//   children: ReactNode;
 // }>) {
 //   return (
 //     <html
@@ -57,12 +59,12 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      className={cn("antialiased", geistSans.variable, geistMono.variable, "font-sans")}
     >
       <body className="min-h-screen">
         <main aria-live="polite">

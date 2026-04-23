@@ -1,15 +1,8 @@
 "use client";
 
 import { motion } from "motion/react";
-import {
-  MapPin, Mail, ExternalLink, Terminal,
-  Code2, Database, Layout, Star, Award, Briefcase,
-  GraduationCap, PlayCircle, BookOpen
-} from "lucide-react";
+import { MapPin, ExternalLink, Terminal, Code2, PlayCircle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/app/_components/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/app/_components/avatar";
-import { Badge } from "@/app/_components/badge";
-import { Progress } from "@/app/_components/progress";
 import { Separator } from "@/app/_components/separator";
 import { SkillSectionCard } from "./_components/SkillSectionCard";
 import { CertificationSectionCard } from "./_components/CertificationSectionCard";
@@ -17,6 +10,9 @@ import { EducationSectionCard } from "./_components/EducationSectionCard";
 import { LanguageSectionCard } from "./_components/LanguageSectionCard";
 import { WorkExperienceSectionCard } from "./_components/WorkExperienceSectionCard";
 import { TestimonialSectionCard } from "./_components/TestimonialSectionCard";
+import { MainAvatarSectionCard } from "./_components/MainAvatarSectionCard";
+import { PassiveTraitSectionCard } from "./_components/PassiveTraitSectionCard";
+import { IntelSectionCard } from "./_components/IntelSectionCard";
 
 export default function Portfolio() {
   return (
@@ -29,79 +25,30 @@ export default function Portfolio() {
           animate={{ opacity: 1, y: 0 }}
           className="md:col-span-4 lg:col-span-3"
         >
-          <Card className="bg-zinc-900 border-zinc-800 h-full">
-            <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
-              <Avatar className="w-24 h-24 border-2 border-primary">
-                <AvatarImage src="https://picsum.photos/seed/anime/200/200" />
-                <AvatarFallback>MC</AvatarFallback>
-              </Avatar>
-              <div>
-                <h2 className="text-xl font-bold text-white flex items-center justify-center gap-2">
-                  Marcus Ng Wen Jian <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                </h2>
-                <p className="text-sm text-zinc-400">Software Engineer</p>
-              </div>
-              <Badge variant="outline" className="border-primary text-primary w-full justify-center py-1">
-                <Star className="w-3 h-3 mr-2" /> Level 99 Full Stack Developer
-              </Badge>
-            </CardContent>
-          </Card>
+          <MainAvatarSectionCard />
         </motion.div>
 
-        {/* TOP MIDDLE & RIGHT: Stats */}
+        {/* TOP MIDDLE & RIGHT: Abilities */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="md:col-span-8 lg:col-span-9 grid grid-cols-1 sm:grid-cols-3 gap-4"
+          className="md:col-span-8 lg:col-span-9 grid grid-cols-1 lg:grid-cols-3 gap-4"
         >
-          <Card className="bg-zinc-900 border-zinc-800">
-            <CardContent className="p-6 flex flex-col items-center justify-center h-full">
-              <div className="relative w-24 h-24 flex items-center justify-center mb-2">
-                <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="45" fill="none" stroke="#27272a" strokeWidth="8" />
-                  <circle cx="50" cy="50" r="45" fill="none" stroke="var(--color-primary)" strokeWidth="8" strokeDasharray="282.7" strokeDashoffset="56.5" className="drop-shadow-[0_0_8px_rgba(0,255,0,0.5)]" />
-                </svg>
-                <div className="absolute text-2xl font-bold text-white">5.0</div>
-              </div>
-              <p className="font-semibold text-white">Years EXP</p>
-              <p className="text-xs text-zinc-500 text-center mt-1">Grinding since 2021</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-zinc-900 border-zinc-800">
-            <CardContent className="p-6 flex flex-col items-center justify-center h-full">
-              <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center mb-4 text-primary">
-                <Code2 className="w-6 h-6" />
-              </div>
-              <h3 className="text-2xl font-bold text-white">42</h3>
-              <p className="font-semibold text-white">Projects Completed</p>
-              <p className="text-xs text-zinc-500 text-center mt-1">Quests finished</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-zinc-900 border-zinc-800">
-            <CardContent className="p-6 flex flex-col items-center justify-center h-full">
-              <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center mb-4 text-primary">
-                <ExternalLink className="w-6 h-6" />
-              </div>
-              <h3 className="text-2xl font-bold text-white">10k+</h3>
-              <p className="font-semibold text-white">Commits</p>
-              <p className="text-xs text-zinc-500 text-center mt-1">Power level over 9000</p>
-            </CardContent>
-          </Card>
+          <PassiveTraitSectionCard className="lg:col-span-1" />
+          <SkillSectionCard className="lg:col-span-2" />
         </motion.div>
 
-        {/* LEFT COLUMN: Info & Skills */}
+        {/* LEFT COLUMN: Info */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
           className="md:col-span-4 lg:col-span-3 flex flex-col gap-4"
         >
-          <Card className="bg-zinc-900 border-zinc-800">
+          {/* <Card className="bg-zinc-900 border-zinc-800">
             <CardHeader>
-              <CardTitle className="text-lg text-white">Info</CardTitle>
+              <CardTitle className="text-lg text-white">Intel</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-2 gap-4 text-sm">
@@ -124,9 +71,11 @@ export default function Portfolio() {
                 </a>
               </div>
             </CardContent>
-          </Card>
+          </Card> */}
 
-          <SkillSectionCard />
+          <IntelSectionCard />
+
+          {/* <SkillSectionCard /> */}
           <CertificationSectionCard />
           <EducationSectionCard />
           <LanguageSectionCard />

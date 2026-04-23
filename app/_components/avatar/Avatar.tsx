@@ -8,8 +8,8 @@ type AvatarProps = AvatarPrimitive.Root.Props & {
 };
 
 export const Avatar = ({
-  className,
   size = "default",
+  className,
   ...props
 }: AvatarProps) => {
   return (
@@ -17,7 +17,7 @@ export const Avatar = ({
       data-slot="avatar"
       data-size={size}
       className={cn(
-        "group/avatar relative flex size-8 shrink-0 rounded-full select-none after:absolute after:inset-0 after:rounded-full after:border after:border-border after:mix-blend-darken data-[size=lg]:size-10 data-[size=sm]:size-6 dark:after:mix-blend-lighten",
+        "group/avatar relative flex size-8 shrink-0 overflow-hidden rounded-full select-none after:absolute after:inset-0 after:rounded-full after:mix-blend-darken data-[size=lg]:size-10 data-[size=sm]:size-6 dark:after:mix-blend-lighten",
         className
       )}
       {...props}

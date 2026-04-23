@@ -4,7 +4,7 @@ import { languages } from "../_data/language";
 
 export const LanguageSectionCard = () => {
   return (
-    <SectionCardWrapper title="Languages">
+    <SectionCardWrapper title="Linguistic Mastery">
       {languages.map((language) => (
         <LanguageSectionCardItem key={language.name} {...language} />
       ))}

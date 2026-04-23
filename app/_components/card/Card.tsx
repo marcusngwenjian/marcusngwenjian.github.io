@@ -6,8 +6,8 @@ type CardProps = ComponentProps<"div"> & {
 };
 
 export const Card = ({
-  className,
   size = "default",
+  className,
   ...props
 }: CardProps) => {
   return (

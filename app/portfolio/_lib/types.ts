@@ -1,7 +1,5 @@
 import { LucideIcon } from "lucide-react";
 
-export type Skill = string;
-
 export type Certification = {
   readonly name: string;
   readonly company: string;
@@ -32,4 +30,16 @@ export type Testimonial = {
   readonly attribution: string;
   readonly avatar: string;
   readonly quote: string;
+};
+
+export type PassiveTrait = {
+  readonly icon: LucideIcon;
+  readonly name: string;
+  readonly description: string;
+  readonly effect: string;
+};
+
+export type SkillAbility = {
+  readonly name: string;
+  readonly description: string;
 };

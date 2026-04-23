@@ -5,7 +5,7 @@ type TestimonialSectionCardItemProps = Testimonial;
 
 export const TestimonialSectionCardItem = ({ referee, attribution, avatar, quote }: TestimonialSectionCardItemProps) => {
   return (
-    <div className="bg-zinc-950 p-4 rounded-lg border border-zinc-800">
+    <div className="bg-zinc-950 p-4 rounded-lg border border-border">
       <div className="flex items-center gap-3 mb-2">
         <Avatar className="w-8 h-8">
           <AvatarImage src={avatar} />
