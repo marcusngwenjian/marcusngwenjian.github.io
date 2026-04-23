@@ -1,7 +1,7 @@
 "use client";
 
+import Image from 'next/image';
 import { motion } from "motion/react";
-import { User, ExternalLink, ChevronRight } from "lucide-react";
 import { RadialGlow } from "@/app/_components/background";
 import { Button, buttonSize, buttonVariant } from "@/app/_components/button";
 
@@ -13,12 +13,9 @@ export default function Home() {
     >
       <RadialGlow />
 
-      <div className="z-10 w-full max-w-7xl flex flex-col md:flex-row items-center gap-12">
-        <header className="flex-1 space-y-6">
+      <div className="w-full max-w-7xl flex flex-col md:flex-row items-center gap-12">
+        <header className="flex-1 space-y-6 z-10">
           <div className="flex items-center gap-3">
-            {/* <div className="w-10 h-10 rounded-full border border-primary flex items-center justify-center">
-              <User size={20} className="text-primary" />
-            </div> */}
             <span className="text-sm tracking-[0.3em] font-medium text-gray-400 uppercase">Hello I'm</span>
           </div>
 
@@ -46,36 +43,17 @@ export default function Home() {
               View Work
             </button> */}
           </div>
-
-          <div className="flex gap-6 pt-8">
-            {[
-              { Icon: ExternalLink, label: 'GitHub' },
-              { Icon: ExternalLink, label: 'LinkedIn' },
-              { Icon: ExternalLink, label: 'Portfolio' }
-            ].map(({ Icon, label }, i) => (
-              <motion.a
-                key={i} href="#"
-                aria-label={label}
-                whileHover={{ y: -5, color: '#5ef0a5' }}
-                className="text-gray-500 transition-colors"
-              >
-                <Icon size={24} />
-              </motion.a>
-            ))}
-          </div>
         </header>
 
-        <div className="flex-1 relative" aria-hidden="true">
-          <div className="relative z-10 w-full aspect-square max-w-md mx-auto grayscale hover:grayscale-0 transition-all duration-700">
-            <div className="w-full h-full bg-[#151515] border border-white/10 rounded-2xl overflow-hidden relative">
-              <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent" />
-              <div className="absolute bottom-8 left-8 right-8">
-                <div className="h-1 w-24 bg-primary mb-4" />
-                <p className="text-xs uppercase tracking-widest text-primary">Senior Software Architect</p>
-              </div>
-            </div>
+        <div className="flex-1 " aria-hidden="true">
+          <div className="relative aspect-square w-full max-w-md mx-auto z-0">
+            <Image
+              src="/images/splash-art.webp"
+              fill
+              alt="Splash Art"
+              className="object-contain lg:scale-175"
+            />
           </div>
-          <div className="absolute -bottom-4 -right-4 w-full h-full border border-primary/20 rounded-2xl -z-10" />
         </div>
       </div>
     </motion.section>
