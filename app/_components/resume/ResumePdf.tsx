@@ -25,31 +25,32 @@ export const ResumePdf = () => {
           <View style={styles.mainContentSection} >
             <View>
               <Text style={styles.sectionHeading}>Profile</Text>
-              <Text>Versatile Lead Software Engineer with extensive experience across the full development lifecycle, from architectural design to cloud deployment. Certified in AWS and Terraform, specializing in building automated infrastructure and scalable full stack applications. Passionate about leveraging AI to optimize development workflows and enhance product capabilities. Committed to driving engineering excellence through rigorous code standards and the integration of emerging technologies to solve high-impact business challenges.</Text>
+              <Text>Versatile Lead Software Engineer and AWS/Terraform certified specialist in scalable cloud infrastructure and full-stack development. Expert in automating DevOps workflows and leveraging AI integration to solve high-impact business challenges through engineering excellence.</Text>
             </View>
           </View>
 
           <View style={styles.mainContentSection} >
-            <Text style={styles.sectionHeading}>Work Experiences</Text>
+            <Text style={styles.sectionHeading}>Work Experience</Text>
             {workExperiences.map((workExperience) => (
               <View key={workExperience.company}>
-                <Text>{workExperience.company}</Text>
+                <Text style={styles.companyName}>{workExperience.company}</Text>
                 {workExperience.roles.map((role) => (
-                  <View key={`${workExperience.company}-${role.role}`}>
-                    <Text>{role.role}</Text>
-                    {role.summary && <Text>{role.summary}</Text>}
-                    {role.topAchievements?.map((achievement) => (
-                      // <Text key={achievement}>{achievement}</Text>
-                      <View key={achievement} style={styles.listItem}>
-                        {/* The Bullet Symbol */}
-                        <Text style={styles.bulletPoint}>•</Text>
-
-                        {/* The Text Content */}
-                        <Text style={styles.listItemContent}>
-                          {achievement}
-                        </Text>
+                  <View key={`${workExperience.company}-${role.role}`} style={styles.roleContainer}>
+                    <View style={styles.roleHeader}>
+                      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <Text style={styles.roleBullet}>•</Text>
+                        <Text style={styles.roleTitle}>{role.role}</Text>
                       </View>
-                    ))}
+                      <Text style={styles.duration}>{role.date}</Text>
+                    </View>
+                    <View style={styles.achievementList}>
+                      {role.topAchievements?.map((achievement) => (
+                        <View key={achievement} style={styles.listItem}>
+                          <Text style={styles.bulletPoint}>•</Text>
+                          <Text style={styles.listItemContent}>{achievement}</Text>
+                        </View>
+                      ))}
+                    </View>
                   </View>
                 ))}
               </View>

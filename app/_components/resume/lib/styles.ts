@@ -8,6 +8,9 @@ Font.register({
   ]
 });
 
+// Disable word hyphenation
+Font.registerHyphenationCallback(word => [word]);
+
 const defaultFontColor = '#18181b';
 
 export const styles = StyleSheet.create({
@@ -55,9 +58,40 @@ export const styles = StyleSheet.create({
     paddingBottom: 5,
     marginBottom: 5
   },
+  companyName: {
+    fontSize: 12,
+    fontWeight: 700,
+    marginBottom: 4,
+  },
+  roleContainer: {
+    marginBottom: 10,
+  },
+  roleHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 2,
+  },
+  roleBullet: {
+    fontSize: 16,
+    color: '#17c85e',
+    marginRight: 6,
+    lineHeight: 1,
+  },
+  roleTitle: {
+    fontSize: 11,
+    fontWeight: 700,
+  },
+  duration: {
+    fontSize: 9,
+    color: '#71717a',
+  },
+  achievementList: {
+    marginLeft: 16,
+  },
   listItem: {
     flexDirection: 'row',
-    marginBottom: 3,
+    marginBottom: 4,
   },
   bulletPoint: {
     width: 10,
