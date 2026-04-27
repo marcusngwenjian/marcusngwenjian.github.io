@@ -11,112 +11,65 @@ Font.register({
 // Disable word hyphenation
 Font.registerHyphenationCallback(word => [word]);
 
-const defaultFontColor = '#18181b';
+export const color = {
+  defaultText: '#18181b',
+  mutedText: '#71717a',
+  brand: '#17c85e'
+} as const;
+
+const fontSize = {
+  mainPanelDefault: 10,
+  sidePanelDefault: 8,
+  documentTitle: 18,
+  documentSubtitle: 14,
+  sectionHeading: 11,
+  sectionSubHeading: 10,
+
+  achievement: 10,
+  contactLink: 8,
+} as const;
+
+const fontWeight = {
+  default: 400,
+  header: 700,
+  documentTitle: 900,
+} as const;
+
+const panelFlexWidth = {
+  main: 2.2, // Takes up 2/3 of the width
+  side: 0.8, // Takes up 1/3 of the width
+} as const;
+
+const interSectionGapVertical = 12;
 
 export const styles = StyleSheet.create({
   page: {
     flexDirection: 'row',
-    backgroundColor: '#FFFFFF',
-    fontFamily: 'Roboto',
     padding: 30,
-    fontSize: 10,
-    fontWeight: 400,
-    color: defaultFontColor,
+    backgroundColor: '#FFFFFF',
+    color: color.defaultText,
+    fontFamily: 'Roboto',
+    fontWeight: fontWeight.documentTitle,
   },
-  mainContent: {
-    flex: 2.2, // Takes up 2/3 of the width
+  mainPanel: {
+    flex: panelFlexWidth.main,
     paddingRight: 20,
+    fontSize: fontSize.mainPanelDefault,
+    fontWeight: fontWeight.default,
   },
-  sidebar: {
-    flex: 0.8, // Takes up 1/3 of the width
+  sidePanel: {
+    flex: panelFlexWidth.side,
     paddingVertical: 20,
     paddingHorizontal: 10,
     backgroundColor: '#f0fdf5',
-  },
-  name: {
-    fontSize: 18,
-    fontWeight: 900,
-  },
-  designation: {
-    fontSize: 14,
+    fontWeight: fontWeight.default,
   },
   mainContentSection: {
-    marginTop: 12,
+    marginTop: interSectionGapVertical,
   },
-  sidebarSection: {
-    marginBottom: 5,
-    fontSize: 8,
-  },
-  sectionHeading: {
-    textTransform: 'uppercase',
-    fontSize: 11,
-    fontWeight: 700,
-    color: "#17c85e",
-    borderBottomWidth: 0.5,
-    borderBottomColor: '#cad5e2',
-    borderBottomStyle: 'solid',
-    paddingBottom: 5,
-    marginBottom: 5
-  },
-  companyName: {
-    fontSize: 12,
-    fontWeight: 700,
-    marginBottom: 4,
-  },
-  roleContainer: {
-    marginBottom: 10,
-  },
-  roleHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginBottom: 2,
-  },
-  roleBullet: {
-    fontSize: 16,
-    color: '#17c85e',
-    marginRight: 6,
-    lineHeight: 1,
-  },
-  roleTitle: {
-    fontSize: 11,
-    fontWeight: 700,
-  },
-  duration: {
-    fontSize: 9,
-    color: '#71717a',
-  },
-  achievementList: {
-    marginLeft: 16,
-  },
-  listItem: {
-    flexDirection: 'row',
-    marginBottom: 4,
-  },
-  bulletPoint: {
-    width: 10,
-    fontSize: 10,
-    marginLeft: 5,
-  },
-  listItemContent: {
-    flex: 1,
-    fontSize: 10,
-    lineHeight: 1.4,
-  },
-  contactRow: {
-    flexDirection: 'row',     // Horizontal layout
-    alignItems: 'center',     // Vertically centers icon with text
-    marginBottom: 4,          // Spacing between rows
-  },
-  contactIcon: {
-    height: 8,
-    width: 8,
-    marginRight: 3,
-  },
-  contactLink: {
-    fontSize: 8,
-    color: defaultFontColor,
-    textDecoration: 'none',
+  sidePanelSection: {
+    marginBottom: interSectionGapVertical,
+    fontSize: fontSize.sidePanelDefault,
   },
   ghostText: {
     position: 'absolute',
@@ -127,23 +80,98 @@ export const styles = StyleSheet.create({
     color: 'transparent',
     fontSize: 0.1, // Keep it tiny so it doesn't shift layout
   },
+  name: {
+    fontSize: fontSize.documentTitle,
+    fontWeight: fontWeight.documentTitle,
+  },
+  designation: {
+    fontSize: fontSize.documentSubtitle,
+  },
+  sectionHeading: {
+    paddingBottom: 5,
+    marginBottom: 5,
+    color: color.brand,
+    fontSize: fontSize.sectionHeading,
+    fontWeight: fontWeight.header,
+    textTransform: 'uppercase',
+    borderBottomWidth: 0.5,
+    borderBottomStyle: 'solid',
+    borderBottomColor: '#cad5e2',
+  },
+  sidePanelItemContainer: {
+    marginBottom: 4,
+  },
+  sidePanelItemHeader: {
+    marginBottom: 1,
+    fontWeight: fontWeight.header
+  },
+  sidePanelItemMutedText: {
+    color: color.mutedText,
+  },
+  companyName: {
+    fontSize: fontSize.sectionSubHeading,
+    fontWeight: fontWeight.header,
+    marginBottom: 1,
+  },
+  roleHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  roleNameContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  roleName: {
+    fontWeight: fontWeight.header,
+  },
+  roleBullet: {
+    marginRight: 6,
+    color: color.brand,
+    fontSize: 16,
+    lineHeight: 1,
+  },
+  roleDate: {
+    color: color.mutedText,
+    fontSize: fontSize.mainPanelDefault - 1,
+  },
+  achievementContainer: {
+    marginLeft: 12,
+  },
+  achievementBulletItemContainer: {
+    flexDirection: 'row',
+  },
+  achievementBulletItemBullet: {
+    width: 10
+  },
+  achievementBulletItemText: {
+    flex: 1,
+  },
+  contactRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 4,
+  },
+  contactIcon: {
+    height: 8,
+    width: 8,
+    marginRight: 3,
+  },
+  contactLink: {
+    color: color.defaultText,
+    fontSize: fontSize.contactLink,
+    textDecoration: 'none',
+  },
   skillContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    marginTop: 5,
   },
   skillTag: {
-    backgroundColor: '#f0f0f080', // Muted light gray
     paddingHorizontal: 8,
     paddingVertical: 4,
-    borderRadius: 4,
     marginRight: 6,
     marginBottom: 6,
+    backgroundColor: '#f0f0f080', // Muted light gray
+    borderRadius: 4,
   },
-  certificateRow: {
-    marginBottom: 4,
-  },
-  certificateName: {
-    fontWeight: 700
-  }
 });

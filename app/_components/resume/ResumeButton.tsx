@@ -1,6 +1,6 @@
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import { ResumePdf } from "./ResumePdf";
 import { Button } from "@/app/_components/button";
+import { ResumePdf } from "./ResumePdf";
 
 export default function ResumeButton() {
   return (

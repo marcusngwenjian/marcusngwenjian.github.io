@@ -70,12 +70,12 @@ export const synapxeWorkExperience: WorkExperience = {
     synapxeAssistantLeadEngineer,
     synapxeSeniorSoftwareEngineer,
     synapxeSoftwareEngineer,
-  ]
-};
+  ] as const,
+} as const;
 
 export const micepadWorkExperience: WorkExperience = {
   company: "Micepad",
   roles: [
     micepadIntern,
-  ]
-};
+  ] as const,
+} as const;

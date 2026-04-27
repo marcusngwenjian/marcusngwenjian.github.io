@@ -24,3 +24,15 @@ export type EducationQualification = {
   readonly institution: string;
   readonly qualification: string;
 };
+
+type ContactIcon = {
+  readonly svg?: string;
+  readonly png?: string;
+};
+
+export type Contact = {
+  readonly icon: ContactIcon;
+  readonly alt: string;
+  readonly label: string;
+  readonly url?: string;
+};
