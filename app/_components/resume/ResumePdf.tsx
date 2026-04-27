@@ -40,6 +40,7 @@ export const ResumePdf = () => {
                       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                         <Text style={styles.roleBullet}>•</Text>
                         <Text style={styles.roleTitle}>{role.role}</Text>
+                        <Text style={styles.ghostText}>({workExperience.company})</Text>
                       </View>
                       <Text style={styles.duration}>{role.date}</Text>
                     </View>
@@ -64,17 +65,17 @@ export const ResumePdf = () => {
             <Text style={styles.sectionHeading}>Contact</Text>
             <View style={styles.contactRow}>
               <Image src={"/icons/external/icons8-github-30.png"} style={styles.contactIcon} />
-              <Text style={styles.imgAltText}>GitHub:</Text>
+              <Text style={styles.ghostText}>GitHub:</Text>
               <Link href="https://github.com/marcusngwenjian" style={styles.contactLink}>github.com/marcusngwenjian</Link>
             </View>
             <View style={styles.contactRow}>
               <Image src={"/icons/external/icons8-linkedin-30.png"} style={styles.contactIcon} />
-              <Text style={styles.imgAltText}>LinkedIn:</Text>
+              <Text style={styles.ghostText}>LinkedIn:</Text>
               <Link href="https://www.linkedin.com/in/marcusngwenjian/" style={styles.contactLink}>linkedin.com/in/marcusngwenjian</Link>
             </View>
             <View style={styles.contactRow}>
               <Image src={"/icons/external/icons8-website-30.png"} style={styles.contactIcon} />
-              <Text style={styles.imgAltText}>Website:</Text>
+              <Text style={styles.ghostText}>Website:</Text>
               <Link href="https://marcusngwenjian.github.io/" style={styles.contactLink}>marcusngwenjian.github.io</Link>
             </View>
             <View>

@@ -118,7 +118,7 @@ export const styles = StyleSheet.create({
     color: defaultFontColor,
     textDecoration: 'none',
   },
-  imgAltText: {
+  ghostText: {
     position: 'absolute',
     top: 0,
     left: 0,
