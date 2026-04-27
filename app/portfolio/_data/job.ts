@@ -1,4 +1,4 @@
-import { WorkExperience } from "../_lib/types";
+import { type WorkExperience } from "../_lib/types";
 
 export const workExperiences: readonly WorkExperience[] = [
   {
