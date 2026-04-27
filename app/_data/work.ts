@@ -15,12 +15,11 @@ export const synapxeAssistantLeadEngineer: WorkRole = {
 export const synapxeSeniorSoftwareEngineer: WorkRole = {
   role: "Senior Software Engineer",
   date: "2021 - 2024",
-  topAchievements: [
+  summary: "Engineered system integrations to government (OGP) and clinical (NHIPS) platforms. Managed AWS environments using Terraform (IaC) while ensuring 100% remediation of high-priority security risks. Collaborated closely with Department Directors to standardize architectural governance, accelerating cross-functional team delivery and ensuring production stability.",
+  achievements: [
     "Developed the integration strategy for an internal system, connecting to government-level interfaces (OGP) and clinical systems (NHIPS).",
     "Engineered and managed secure cloud infrastructure using Terraform (IaC), including AWS API Gateway, Lambda, EC2, ROSA, and VPC Endpoints.",
     "Spearheaded system hardening efforts by remediating high-priority CVE vulnerabilities and Penetration Testing findings, ensuring 100% resolution of security risks across the infrastructure.",
-  ] as const,
-  achievements: [
     "Standardized architectural governance by developing system design patterns and high-level sequence diagrams, facilitating Director-level alignment and accelerating onboarding for cross-functional engineering teams.",
     "Directed production deployments for large-scale infrastructure and React-based frontend applications, serving as the primary lead for release stability.",
     "Led cross-functional synchronization meetings to clarify complex requirements and align development teams on unified technical solutions.",
@@ -31,14 +30,13 @@ export const synapxeSeniorSoftwareEngineer: WorkRole = {
 export const synapxeSoftwareEngineer: WorkRole = {
   role: "Software Engineer",
   date: "2019 - 2021",
-  topAchievements: [
+  summary: "Optimized flagship healthcare system (HealthHub) using ASP.NET and SQL, ensuring high reliability and the remediation of critical PII security vulnerabilities. Collaborated cross-functionally with Agile stakeholders to translate complex requirements into technical documentation that accelerated team velocity and streamlined production releases.",
+  achievements: [
     "Architected and optimized full-stack backend modules for a flagship healthcare platform (HealthHub) using ASP.NET and SQL, achieving enhanced data consistency and system reliability by synchronizing complex Angular frontend components.",
     "Proactively identified and mitigated a PII data exposure vulnerability by analyzing network traffic and packet data.",
-  ] as const,
-  achievements: [
     "Remediated high-priority security vulnerabilities identified through external bug bounty programs and automated code scans.",
     "Provided critical production support for MVP releases, ensuring stable transitions to Service Operations teams.",
-    "Collaborated cross-functionally with Business Analysts and QA to translate ambiguous user requirements into rigorous technical specifications, streamlining the development lifecycle within an Agile/Scrum framework",
+    " with Business Analysts and QA to translate ambiguous user requirements into rigorous technical specifications, streamlining the development lifecycle within an Agile/Scrum framework",
     "Standardized organizational knowledge by authoring comprehensive technical documentation and developer guides, reducing onboarding time for new hires and increasing overall team velocity."
   ] as const,
 };
@@ -72,5 +70,12 @@ export const synapxeWorkExperience: WorkExperience = {
     synapxeAssistantLeadEngineer,
     synapxeSeniorSoftwareEngineer,
     synapxeSoftwareEngineer,
+  ]
+};
+
+export const micepadWorkExperience: WorkExperience = {
+  company: "Micepad",
+  roles: [
+    micepadIntern,
   ]
 };

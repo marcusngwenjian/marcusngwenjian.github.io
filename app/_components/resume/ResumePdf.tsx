@@ -45,6 +45,11 @@ export const ResumePdf = () => {
                       <Text style={styles.duration}>{role.date}</Text>
                     </View>
                     <View style={styles.achievementList}>
+                      {role.summary && (
+                        <View>
+                          <Text>{role.summary}</Text>
+                        </View>
+                      )}
                       {role.topAchievements?.map((achievement) => (
                         <View key={achievement} style={styles.listItem}>
                           <Text style={styles.bulletPoint}>•</Text>
