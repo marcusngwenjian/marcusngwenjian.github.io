@@ -27,8 +27,7 @@ export default function Home() {
           </h1>
 
           <p className="max-w-md text-muted-foreground text-lg leading-relaxed">
-            Building dynamic and scalable web applications with precision.
-            A passionate full-stack developer skilled in Next.js, TypeScript, and high-performance systems.
+            Versatile Lead Software Engineer with extensive experience across the full development lifecycle, from architectural design to cloud deployment. Certified in AWS and Terraform, specializing in building automated infrastructure and scalable full stack applications. Passionate about leveraging AI to optimize development workflows and enhance product capabilities. Committed to driving engineering excellence through rigorous code standards and the integration of emerging technologies to solve high-impact business challenges.
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
