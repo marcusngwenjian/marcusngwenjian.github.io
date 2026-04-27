@@ -2,15 +2,15 @@ import { PDFDownloadLink } from "@react-pdf/renderer";
 import { Button } from "@/app/_components/button";
 import { ResumePdf } from "./ResumePdf";
 
-export default function ResumeButton() {
+export default function ResumeDownloadButton() {
   return (
     <PDFDownloadLink
       document={<ResumePdf />}
-      fileName="zzz-Resume-MarcusNgwenjian.pdf"
+      fileName="MarcusNgWenJian-Resume.pdf"
     >
       {({ loading }) => (
-        <Button disabled={loading} className="font-mono bg-black text-white border border-[#444] rounded-sm hover:bg-zinc-900">
-          {loading ? "Generating..." : "Download PDF"}
+        <Button disabled={loading} className="font-bold transition-transform hover:scale-105">
+          {"Download PDF"}
         </Button>
       )}
     </PDFDownloadLink>

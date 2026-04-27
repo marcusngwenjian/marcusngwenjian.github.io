@@ -1,11 +1,5 @@
-"use client";
 
-import dynamic from "next/dynamic";
-
-const ResumeButton = dynamic(
-  () => import("@/app/_components/resume/ResumeButton"),
-  { ssr: false }
-);
+import ResumeDownloadButtonDynamic from "../_components/resume/ResumeDownloadButtonDynamic";
 
 export default function Profile() {
   return (
@@ -15,7 +9,7 @@ export default function Profile() {
           <div className="bg-muted text-muted-foreground">
             Sample Muted Text
           </div>
-          <ResumeButton />
+          <ResumeDownloadButtonDynamic />
         </div>
       </main>
     </div>
