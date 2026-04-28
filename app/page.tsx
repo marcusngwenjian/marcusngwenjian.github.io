@@ -72,6 +72,8 @@ export default function Home() {
               fill
               alt="Splash Art"
               className="object-contain lg:scale-175"
+              loading="eager"
+              fetchPriority="high"
             />
           </div>
         </div>
