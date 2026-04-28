@@ -1,5 +1,5 @@
-import { LucideIcon } from "lucide-react";
-import { tabId } from "./constants";
+import type { LucideIcon } from 'lucide-react';
+import type { tabId } from './constants';
 
 export type TabId = (typeof tabId)[keyof typeof tabId];
 

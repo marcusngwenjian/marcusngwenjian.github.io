@@ -1,2 +1,2 @@
-export * from "./ResumeDownloadButton";
-export * from "./ResumeDownloadButtonDynamic";
+export * from './ResumeDownloadButton';
+export * from './ResumeDownloadButtonDynamic';

@@ -1,12 +1,14 @@
-import { SectionCardWrapper } from "./SectionCardWrapper";
-import { PassiveTraitSectionCardItem } from "./PassiveTraitSectionCardItem";
-import { passiveAbilities } from "../_data/trait";
+import { passiveAbilities } from '../_data/trait';
+import { PassiveTraitSectionCardItem } from './PassiveTraitSectionCardItem';
+import { SectionCardWrapper } from './SectionCardWrapper';
 
 interface PassiveTraitSectionCardProps {
   className?: string;
 }
 
-export const PassiveTraitSectionCard = ({ className }: PassiveTraitSectionCardProps) => {
+export const PassiveTraitSectionCard = ({
+  className,
+}: PassiveTraitSectionCardProps) => {
   return (
     <SectionCardWrapper title="Passive Traits" className={className}>
       {passiveAbilities.map((ability) => (

@@ -1,9 +1,9 @@
-import { ComponentProps } from "react";
-import { XIcon } from "lucide-react";
-import { cn } from "@/app/_utilities/classname";
-import { useDialogContext } from "./lib/hooks";
+import type { ComponentProps } from 'react';
+import { XIcon } from 'lucide-react';
+import { cn } from '@/app/_utilities/classname';
+import { useDialogContext } from './lib/hooks';
 
-type DialogHeaderProps = ComponentProps<"div"> & {
+type DialogHeaderProps = ComponentProps<'div'> & {
   hideCloseIcon?: boolean;
   hideDivider?: boolean;
 };
@@ -18,7 +18,14 @@ export const DialogHeader = ({
   const { closeDialog } = useDialogContext();
 
   return (
-    <div className={cn("flex justify-between items-center pt-6 px-6", !hideDivider && "border-b border-muted p-6", className)} {...props}>
+    <div
+      className={cn(
+        'flex items-center justify-between px-6 pt-6',
+        !hideDivider && 'border-muted border-b p-6',
+        className,
+      )}
+      {...props}
+    >
       {children}
       {!hideCloseIcon && (
         <button

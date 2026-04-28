@@ -1,24 +1,34 @@
-"use client";
+'use client';
 
-import { motion } from "motion/react";
-import { MapPin, ExternalLink, Terminal, Code2, PlayCircle } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/app/_components/card";
-import { Separator } from "@/app/_components/separator";
-import { SkillSectionCard } from "./_components/SkillSectionCard";
-import { CertificationSectionCard } from "./_components/CertificationSectionCard";
-import { EducationSectionCard } from "./_components/EducationSectionCard";
-import { LanguageSectionCard } from "./_components/LanguageSectionCard";
-import { WorkExperienceSectionCard } from "./_components/WorkExperienceSectionCard";
-import { TestimonialSectionCard } from "./_components/TestimonialSectionCard";
-import { MainAvatarSectionCard } from "./_components/MainAvatarSectionCard";
-import { PassiveTraitSectionCard } from "./_components/PassiveTraitSectionCard";
-import { IntelSectionCard } from "./_components/IntelSectionCard";
+import {
+  Code2,
+  ExternalLink,
+  MapPin,
+  PlayCircle,
+  Terminal,
+} from 'lucide-react';
+import { motion } from 'motion/react';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/app/_components/card';
+import { Separator } from '@/app/_components/separator';
+import { CertificationSectionCard } from './_components/CertificationSectionCard';
+import { EducationSectionCard } from './_components/EducationSectionCard';
+import { IntelSectionCard } from './_components/IntelSectionCard';
+import { LanguageSectionCard } from './_components/LanguageSectionCard';
+import { MainAvatarSectionCard } from './_components/MainAvatarSectionCard';
+import { PassiveTraitSectionCard } from './_components/PassiveTraitSectionCard';
+import { SkillSectionCard } from './_components/SkillSectionCard';
+import { TestimonialSectionCard } from './_components/TestimonialSectionCard';
+import { WorkExperienceSectionCard } from './_components/WorkExperienceSectionCard';
 
 export default function Portfolio() {
   return (
-    <main className="min-h-[calc(100vh-4rem)] p-4 md:p-8 bg-zinc-950 text-zinc-300">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
-
+    <main className="min-h-[calc(100vh-4rem)] bg-zinc-950 p-4 text-zinc-300 md:p-8">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 md:grid-cols-12 md:gap-6">
         {/* TOP LEFT: Profile Card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -33,7 +43,7 @@ export default function Portfolio() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="md:col-span-8 lg:col-span-9 grid grid-cols-1 lg:grid-cols-3 gap-4"
+          className="grid grid-cols-1 gap-4 md:col-span-8 lg:col-span-9 lg:grid-cols-3"
         >
           <PassiveTraitSectionCard className="lg:col-span-1" />
           <SkillSectionCard className="lg:col-span-2" />
@@ -44,7 +54,7 @@ export default function Portfolio() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
-          className="md:col-span-4 lg:col-span-3 flex flex-col gap-4"
+          className="flex flex-col gap-4 md:col-span-4 lg:col-span-3"
         >
           {/* <Card className="bg-zinc-900 border-zinc-800">
             <CardHeader>
@@ -79,7 +89,6 @@ export default function Portfolio() {
           <CertificationSectionCard />
           <EducationSectionCard />
           <LanguageSectionCard />
-
         </motion.div>
 
         {/* MIDDLE COLUMN: Work Experience */}
@@ -109,23 +118,36 @@ export default function Portfolio() {
           transition={{ delay: 0.5 }}
           className="md:col-span-12"
         >
-          <Card className="bg-zinc-900 border-zinc-800">
+          <Card className="border-zinc-800 bg-zinc-900">
             <CardHeader>
-              <CardTitle className="text-lg text-white">Recent Artifacts (Projects)</CardTitle>
+              <CardTitle className="text-lg text-white">
+                Recent Artifacts (Projects)
+              </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
                 {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="group relative rounded-lg overflow-hidden border border-zinc-800 cursor-pointer">
-                    <div className="aspect-video bg-zinc-800 relative">
-                      <img src={`https://picsum.photos/seed/project${i}/400/225`} alt={`Project ${i}`} className="object-cover w-full h-full opacity-70 group-hover:opacity-100 transition-opacity" />
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/50">
-                        <PlayCircle className="w-10 h-10 text-primary" />
+                  <div
+                    key={i}
+                    className="group relative cursor-pointer overflow-hidden rounded-lg border border-zinc-800"
+                  >
+                    <div className="relative aspect-video bg-zinc-800">
+                      <img
+                        src={`https://picsum.photos/seed/project${i}/400/225`}
+                        alt={`Project ${i}`}
+                        className="h-full w-full object-cover opacity-70 transition-opacity group-hover:opacity-100"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
+                        <PlayCircle className="text-primary h-10 w-10" />
                       </div>
                     </div>
-                    <div className="p-3 bg-zinc-950">
-                      <p className="text-sm font-bold text-white truncate">Project Alpha {i}</p>
-                      <p className="text-xs text-zinc-500 truncate">React • Node.js • WebGL</p>
+                    <div className="bg-zinc-950 p-3">
+                      <p className="truncate text-sm font-bold text-white">
+                        Project Alpha {i}
+                      </p>
+                      <p className="truncate text-xs text-zinc-500">
+                        React • Node.js • WebGL
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -133,7 +155,6 @@ export default function Portfolio() {
             </CardContent>
           </Card>
         </motion.div>
-
       </div>
     </main>
   );

@@ -1,22 +1,18 @@
-import { ComponentProps } from "react";
-import { cn } from "@/app/_utilities/classname";
+import type { ComponentProps } from 'react';
+import { cn } from '@/app/_utilities/classname';
 
-type CardProps = ComponentProps<"div"> & {
-  size?: "default" | "sm";
+type CardProps = ComponentProps<'div'> & {
+  size?: 'default' | 'sm';
 };
 
-export const Card = ({
-  size = "default",
-  className,
-  ...props
-}: CardProps) => {
+export const Card = ({ size = 'default', className, ...props }: CardProps) => {
   return (
     <div
       data-slot="card"
       data-size={size}
       className={cn(
-        "group/card flex flex-col gap-6 overflow-hidden rounded-xl bg-card py-6 text-sm text-card-foreground shadow-xs ring-1 ring-foreground/10 has-[>img:first-child]:pt-0 data-[size=sm]:gap-4 data-[size=sm]:py-4 *:[img:first-child]:rounded-t-xl *:[img:last-child]:rounded-b-xl",
-        className
+        'group/card bg-card text-card-foreground ring-foreground/10 flex flex-col gap-6 overflow-hidden rounded-xl py-6 text-sm shadow-xs ring-1 has-[>img:first-child]:pt-0 data-[size=sm]:gap-4 data-[size=sm]:py-4 *:[img:first-child]:rounded-t-xl *:[img:last-child]:rounded-b-xl',
+        className,
       )}
       {...props}
     />

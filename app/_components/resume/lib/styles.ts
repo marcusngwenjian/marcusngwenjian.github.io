@@ -1,20 +1,30 @@
-import { Font, StyleSheet } from "@react-pdf/renderer";
+import { Font, StyleSheet } from '@react-pdf/renderer';
 
 Font.register({
-  family: 'Roboto', fonts: [
-    { src: 'https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbWmT.ttf', fontWeight: 400 },
-    { src: 'https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuYjammT.ttf', fontWeight: 700 },
-    { src: 'https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuZtammT.ttf', fontWeight: 900 },
-  ]
+  family: 'Roboto',
+  fonts: [
+    {
+      src: 'https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbWmT.ttf',
+      fontWeight: 400,
+    },
+    {
+      src: 'https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuYjammT.ttf',
+      fontWeight: 700,
+    },
+    {
+      src: 'https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuZtammT.ttf',
+      fontWeight: 900,
+    },
+  ],
 });
 
 // Disable word hyphenation
-Font.registerHyphenationCallback(word => [word]);
+Font.registerHyphenationCallback((word) => [word]);
 
 export const color = {
   defaultText: '#18181b',
   mutedText: '#71717a',
-  brand: '#17c85e'
+  brand: '#17c85e',
 } as const;
 
 const fontSize = {
@@ -103,7 +113,7 @@ export const styles = StyleSheet.create({
   },
   sidePanelItemHeader: {
     marginBottom: 1,
-    fontWeight: fontWeight.header
+    fontWeight: fontWeight.header,
   },
   sidePanelItemMutedText: {
     color: color.mutedText,
@@ -142,7 +152,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   achievementBulletItemBullet: {
-    width: 10
+    width: 10,
   },
   achievementBulletItemText: {
     flex: 1,

@@ -1,6 +1,6 @@
-import { SectionCardWrapper } from "./SectionCardWrapper";
-import { LanguageSectionCardItem } from "./LanguageSectionCardItem";
-import { languages } from "../_data/language";
+import { languages } from '../_data/language';
+import { LanguageSectionCardItem } from './LanguageSectionCardItem';
+import { SectionCardWrapper } from './SectionCardWrapper';
 
 export const LanguageSectionCard = () => {
   return (

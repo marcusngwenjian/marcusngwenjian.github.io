@@ -1,7 +1,7 @@
-import { Text, View } from "@react-pdf/renderer";
-import ResumeRoleHeader from "./ResumeRoleHeader";
-import ResumeBulletAchievement from "./ResumeBulletAchievement";
-import { styles } from "./lib/styles";
+import { Text, View } from '@react-pdf/renderer';
+import { styles } from './lib/styles';
+import ResumeBulletAchievement from './ResumeBulletAchievement';
+import ResumeRoleHeader from './ResumeRoleHeader';
 
 interface ResumeRoleProps {
   readonly company: string;
@@ -10,9 +10,16 @@ interface ResumeRoleProps {
   readonly summary?: string;
   readonly achievements?: readonly string[];
   readonly isLast?: boolean;
-};
+}
 
-export default function ResumeRole({ company, role, date, summary, achievements, isLast = false }: ResumeRoleProps) {
+export default function ResumeRole({
+  company,
+  role,
+  date,
+  summary,
+  achievements,
+  isLast = false,
+}: ResumeRoleProps) {
   const containerStyle = {
     marginBottom: isLast ? 0 : 2,
   } as const;

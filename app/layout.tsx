@@ -1,29 +1,30 @@
-import { ReactNode } from "react";
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { NavigationBar } from "@/app/_components/navigation";
-import { Footer } from "@/app/_components/html";
-import { Wallpaper } from "@/app/_components/background";
-import { cn } from "./_utilities/classname";
-import "./globals.css";
+import type { ReactNode } from 'react';
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
+import { Wallpaper } from '@/app/_components/background';
+import { Footer } from '@/app/_components/html';
+import { NavigationBar } from '@/app/_components/navigation';
+import { cn } from './_utilities/classname';
+import './globals.css';
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 });
 
 // Reference: https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadata-fields
 export const metadata: Metadata = {
   title: {
-    template: "%s | Marcus Ng Wen Jian",
-    default: "Marcus Ng Wen Jian",
+    template: '%s | Marcus Ng Wen Jian',
+    default: 'Marcus Ng Wen Jian',
   },
-  description: "Hi, I'm Marcus! A Singapore-based Software Engineer. I build digital solutions by day and conquer virtual realms and new countries by night. Discover my projects and journey here.",
+  description:
+    "Hi, I'm Marcus! A Singapore-based Software Engineer. I build digital solutions by day and conquer virtual realms and new countries by night. Discover my projects and journey here.",
 };
 
 // export default function RootLayout({
@@ -64,12 +65,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("antialiased", geistSans.variable, geistMono.variable, "font-sans")}
+      className={cn(
+        'antialiased',
+        geistSans.variable,
+        geistMono.variable,
+        'font-sans',
+      )}
     >
       <body className="min-h-screen">
-        <main aria-live="polite">
-          {children}
-        </main>
+        <main aria-live="polite">{children}</main>
         <NavigationBar />
         <Footer />
         <Wallpaper />

@@ -1,4 +1,4 @@
-import { EducationQualification } from "../_lib/types";
+import type { EducationQualification } from '../_lib/types';
 
 type EducationSectionCardItemProps = EducationQualification;
 
@@ -9,10 +9,14 @@ export const EducationSectionCardItem = ({
 }: EducationSectionCardItemProps) => {
   return (
     <div className="flex gap-3">
-      <div className="mt-1"><Icon className="w-4 h-4 text-primary" /></div>
+      <div className="mt-1">
+        <Icon className="text-primary h-4 w-4" />
+      </div>
       <div>
-        <p className="text-sm font-medium text-foreground">{institution}</p>
-        <p className="text-xs text-muted-secondary-foreground">{qualification}</p>
+        <p className="text-foreground text-sm font-medium">{institution}</p>
+        <p className="text-muted-secondary-foreground text-xs">
+          {qualification}
+        </p>
       </div>
     </div>
   );

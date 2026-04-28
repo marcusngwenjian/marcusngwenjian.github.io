@@ -1,5 +1,5 @@
-import { Award } from "lucide-react";
-import { Certification } from "../_lib/types";
+import { Award } from 'lucide-react';
+import type { Certification } from '../_lib/types';
 
 type CertificationSectionCardItemProps = Certification;
 
@@ -10,10 +10,14 @@ export const CertificationSectionCardItem = ({
 }: CertificationSectionCardItemProps) => {
   return (
     <div className="flex gap-3">
-      <div className="mt-1"><Award className="w-4 h-4 text-primary" /></div>
+      <div className="mt-1">
+        <Award className="text-primary h-4 w-4" />
+      </div>
       <div>
-        <p className="text-sm font-medium text-foreground">{name}</p>
-        <p className="text-xs text-muted-secondary-foreground">{company} • {year}</p>
+        <p className="text-foreground text-sm font-medium">{name}</p>
+        <p className="text-muted-secondary-foreground text-xs">
+          {company} • {year}
+        </p>
       </div>
     </div>
   );

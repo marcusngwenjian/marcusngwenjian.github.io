@@ -1,7 +1,7 @@
-import { ComponentProps } from "react";
-import { cn } from "@/app/_utilities/classname";
+import type { ComponentProps } from 'react';
+import { cn } from '@/app/_utilities/classname';
 
-type CardDescriptionProps = ComponentProps<"div">;
+type CardDescriptionProps = ComponentProps<'div'>;
 
 export const CardDescription = ({
   className,
@@ -10,7 +10,7 @@ export const CardDescription = ({
   return (
     <div
       data-slot="card-description"
-      className={cn("text-sm text-muted-foreground", className)}
+      className={cn('text-muted-foreground text-sm', className)}
       {...props}
     />
   );

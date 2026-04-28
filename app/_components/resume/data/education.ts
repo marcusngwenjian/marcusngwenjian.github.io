@@ -1,5 +1,3 @@
-import { type EducationQualification, nus } from "@/app/_data";
+import { nus, type EducationQualification } from '@/app/_data';
 
-export const qualifications: readonly EducationQualification[] = [
-  nus
-] as const;
+export const qualifications: readonly EducationQualification[] = [nus] as const;

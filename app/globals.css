@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme static {
   --brand: oklch(0.8563 0.16 154.58);

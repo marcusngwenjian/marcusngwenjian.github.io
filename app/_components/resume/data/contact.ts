@@ -1,4 +1,11 @@
-import { type Contact, phone, email, github, linkedin, website } from "@/app/_data";
+import {
+  email,
+  github,
+  linkedin,
+  phone,
+  website,
+  type Contact,
+} from '@/app/_data';
 
 export const contacts: readonly Contact[] = [
   // phone,

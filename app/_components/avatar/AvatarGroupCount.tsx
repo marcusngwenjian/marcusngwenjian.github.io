@@ -1,7 +1,7 @@
-import { ComponentProps } from "react";
-import { cn } from "@/app/_utilities/classname";
+import type { ComponentProps } from 'react';
+import { cn } from '@/app/_utilities/classname';
 
-type AvatarGroupCountProps = ComponentProps<"div">;
+type AvatarGroupCountProps = ComponentProps<'div'>;
 
 export const AvatarGroupCount = ({
   className,
@@ -11,8 +11,8 @@ export const AvatarGroupCount = ({
     <div
       data-slot="avatar-group-count"
       className={cn(
-        "relative flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-sm text-muted-foreground ring-2 ring-background group-has-data-[size=lg]/avatar-group:size-10 group-has-data-[size=sm]/avatar-group:size-6 [&>svg]:size-4 group-has-data-[size=lg]/avatar-group:[&>svg]:size-5 group-has-data-[size=sm]/avatar-group:[&>svg]:size-3",
-        className
+        'bg-muted text-muted-foreground ring-background relative flex size-8 shrink-0 items-center justify-center rounded-full text-sm ring-2 group-has-data-[size=lg]/avatar-group:size-10 group-has-data-[size=sm]/avatar-group:size-6 [&>svg]:size-4 group-has-data-[size=lg]/avatar-group:[&>svg]:size-5 group-has-data-[size=sm]/avatar-group:[&>svg]:size-3',
+        className,
       )}
       {...props}
     />

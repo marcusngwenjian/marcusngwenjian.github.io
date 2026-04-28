@@ -1,6 +1,10 @@
-import { ReactNode } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/app/_components/card";
-import { cn } from "@/app/_utilities/classname";
+import type { ReactNode } from 'react';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/app/_components/card';
 
 interface SectionCardWrapperProps {
   children: ReactNode;
@@ -16,11 +20,9 @@ export const SectionCardWrapper = ({
   return (
     <Card className={className}>
       <CardHeader>
-        <CardTitle className="text-lg text-foreground">{title}</CardTitle>
+        <CardTitle className="text-foreground text-lg">{title}</CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4">
-        {children}
-      </CardContent>
+      <CardContent className="space-y-4">{children}</CardContent>
     </Card>
   );
 };

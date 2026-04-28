@@ -1,7 +1,7 @@
-import { Text, View } from "@react-pdf/renderer";
-import type { WorkRole } from "@/app/_data/schema";
-import ResumeRole from "./ResumeRole";
-import { styles } from "./lib/styles";
+import { Text, View } from '@react-pdf/renderer';
+import type { WorkRole } from '@/app/_data/schema';
+import { styles } from './lib/styles';
+import ResumeRole from './ResumeRole';
 
 interface ResumeCompanyProps {
   readonly company: string;
@@ -9,7 +9,11 @@ interface ResumeCompanyProps {
   readonly isLast: boolean;
 }
 
-export default function ResumeCompany({ company, roles, isLast }: ResumeCompanyProps) {
+export default function ResumeCompany({
+  company,
+  roles,
+  isLast,
+}: ResumeCompanyProps) {
   const containerStyle = {
     marginBottom: isLast ? 0 : 5,
   } as const;
@@ -25,7 +29,7 @@ export default function ResumeCompany({ company, roles, isLast }: ResumeCompanyP
           date={role.date}
           summary={role.summary}
           achievements={role.topAchievements}
-          isLast={idx === (roles.length - 1)}
+          isLast={idx === roles.length - 1}
         />
       ))}
     </View>

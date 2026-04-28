@@ -1,5 +1,5 @@
-import { Text, View } from "@react-pdf/renderer";
-import { styles } from "./lib/styles";
+import { Text, View } from '@react-pdf/renderer';
+import { styles } from './lib/styles';
 
 interface ResumeRoleHeaderProps {
   readonly name: string;
@@ -7,7 +7,11 @@ interface ResumeRoleHeaderProps {
   readonly date: string;
 }
 
-export default function ResumeRoleHeader({ name, company, date }: ResumeRoleHeaderProps) {
+export default function ResumeRoleHeader({
+  name,
+  company,
+  date,
+}: ResumeRoleHeaderProps) {
   return (
     <View style={styles.roleHeader}>
       <View style={styles.roleNameContainer}>

@@ -1,12 +1,12 @@
-import { BrainCircuit, Coffee, Sparkles, Users } from "lucide-react";
-import { PassiveTrait } from "../_lib/types";
+import { BrainCircuit, Coffee, Sparkles, Users } from 'lucide-react';
+import type { PassiveTrait } from '../_lib/types';
 
 export const passiveAbilities: readonly PassiveTrait[] = [
   {
     icon: Users,
-    name: "Team Coordination",
-    description: "Increased efficiency in collaborative raids",
-    effect: "+15 Synergy",
+    name: 'Team Coordination',
+    description: 'Increased efficiency in collaborative raids',
+    effect: '+15 Synergy',
   },
   {
     icon: BrainCircuit,
@@ -25,5 +25,5 @@ export const passiveAbilities: readonly PassiveTrait[] = [
     name: 'Tea Infusion',
     description: 'Boosts compilation and sprint speeds',
     effect: '+10 Haste',
-  }
+  },
 ];

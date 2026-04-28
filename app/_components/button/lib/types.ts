@@ -1,4 +1,4 @@
-import { buttonSize, buttonVariant } from "./constants";
+import type { buttonSize, buttonVariant } from './constants';
 
 export type ButtonVariant = (typeof buttonVariant)[keyof typeof buttonVariant];
 

@@ -31,8 +31,8 @@ This skill automates the process of fetching a shadcn component, refactoring it 
         * **Consolidation Rule:** Do not create separate files for every constant. Instead, consolidate all non-component logic into: `@/app/_components/<DESIRED_COMPONENT>/lib/constants.ts`.
         * **Variant Mapping (Enums):** For all `cva` variant groups (e.g., `variant`, `size`), transform the raw strings into camelCase `as const` objects.
           * Naming: `<componentName><VariantGroup>` (e.g., `buttonVariant`, `buttonSize`).
-          * Mapping: Map descriptive keys to the shadcn string values (e.g., `default: "default"`, `small: "sm"`).
-        * **CVA Implementation:** In the component file, import these constants and use computed property names (e.g., `[buttonVariant.default]: "..."`) to define the styles within the `cva` function.
+          * Mapping: Map descriptive keys to the shadcn string values (e.g., `default: 'default'`, `small: 'sm'`).
+        * **CVA Implementation:** In the component file, import these constants and use computed property names (e.g., `[buttonVariant.default]: '...'`) to define the styles within the `cva` function.
         * **Collision Prevention:** If multiple components share the same constant file, ensure every constant is prefixed with the component name to prevent barrel export conflicts in the `index.ts`
     * Note: Ensure the index file provides a single point of entry for both UI logic and utilities.
 
@@ -72,10 +72,10 @@ This skill automates the process of fetching a shadcn component, refactoring it 
 
 **From (shadcn source):**
 ```typescript
-const buttonVariants = cva("...", {
+const buttonVariants = cva('...', {
   variants: {
-    variant: { default: "...", outline: "..." },
-    size: { default: "...", sm: "..." }
+    variant: { default: '...', outline: '...' },
+    size: { default: '...', sm: '...' }
   }
 })
 ```
@@ -84,23 +84,23 @@ const buttonVariants = cva("...", {
 * `lib/constants.ts`
   ```typescript
   export const buttonVariant = {
-    default: "default",
-    outline: "outline",
+    default: 'default',
+    outline: 'outline',
   } as const;
 
   export const buttonSize = {
-    default: "default",
-    small: "sm",
+    default: 'default',
+    small: 'sm',
   } as const;
   ```
 * `Button.tsx`
   ```typescript
-  import { buttonVariant, buttonSize } from "./lib/constants";
+  import { buttonVariant, buttonSize } from './lib/constants';
 
-  const buttonVariants = cva("...", {
+  const buttonVariants = cva('...', {
     variants: {
-      variant: { [buttonVariant.default]: "...", [buttonVariant.outline]: "..." },
-      size: { [buttonSize.default]: "...", [buttonSize.small]: "..." },
+      variant: { [buttonVariant.default]: '...', [buttonVariant.outline]: '...' },
+      size: { [buttonSize.default]: '...', [buttonSize.small]: '...' },
     },
     defaultVariants: {
       variant: buttonVariant.default,

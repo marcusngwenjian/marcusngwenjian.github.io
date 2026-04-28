@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { createContext } from "react";
+import { createContext } from 'react';
 
 interface DialogContextType {
   isOpen: boolean;
@@ -8,4 +8,6 @@ interface DialogContextType {
   closeDialog: () => void;
 }
 
-export const DialogContext = createContext<DialogContextType | undefined>(undefined);
+export const DialogContext = createContext<DialogContextType | undefined>(
+  undefined,
+);

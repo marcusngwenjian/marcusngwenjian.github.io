@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useState, type ReactNode } from "react";
-import { DialogContext } from "./DialogContext";
+import { useState, type ReactNode } from 'react';
+import { DialogContext } from './DialogContext';
 
 interface DialogProps {
   children: ReactNode;

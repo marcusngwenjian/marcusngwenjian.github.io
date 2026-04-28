@@ -1,5 +1,5 @@
-import { SectionCardWrapper } from "./SectionCardWrapper";
-import { IntelExternalLinkButton } from "./IntelExternalLinkIconButton";
+import { IntelExternalLinkButton } from './IntelExternalLinkIconButton';
+import { SectionCardWrapper } from './SectionCardWrapper';
 
 export const IntelSectionCard = () => {
   return (
@@ -15,8 +15,16 @@ export const IntelSectionCard = () => {
         </div>
       </div> */}
       <div className="space-y-2 space-x-2">
-        <IntelExternalLinkButton href="https://github.com/marcusngwenjian" alt="GitHub" iconSrc="/icons/external/icons8-github.svg" />
-        <IntelExternalLinkButton href="https://www.linkedin.com/in/marcusngwenjian/" alt="LinkedIn" iconSrc="/icons/external/icons8-linkedin.svg" />
+        <IntelExternalLinkButton
+          href="https://github.com/marcusngwenjian"
+          alt="GitHub"
+          iconSrc="/icons/external/icons8-github.svg"
+        />
+        <IntelExternalLinkButton
+          href="https://www.linkedin.com/in/marcusngwenjian/"
+          alt="LinkedIn"
+          iconSrc="/icons/external/icons8-linkedin.svg"
+        />
       </div>
     </SectionCardWrapper>
   );

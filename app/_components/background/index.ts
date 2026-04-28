@@ -1,2 +1,2 @@
-export * from "./Wallpaper";
-export * from "./RadialGlow";
+export * from './Wallpaper';
+export * from './RadialGlow';

@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { Progress as ProgressPrimitive } from "@base-ui/react/progress";
-import { cn } from "@/app/_utilities/classname";
-import { ProgressTrack } from "./ProgressTrack";
-import { ProgressIndicator } from "./ProgressIndicator";
+import { Progress as ProgressPrimitive } from '@base-ui/react/progress';
+import { cn } from '@/app/_utilities/classname';
+import { ProgressIndicator } from './ProgressIndicator';
+import { ProgressTrack } from './ProgressTrack';
 
 type ProgressProps = ProgressPrimitive.Root.Props;
 
@@ -17,7 +17,7 @@ export const Progress = ({
     <ProgressPrimitive.Root
       value={value}
       data-slot="progress"
-      className={cn("flex flex-wrap gap-3", className)}
+      className={cn('flex flex-wrap gap-3', className)}
       {...props}
     >
       {children}

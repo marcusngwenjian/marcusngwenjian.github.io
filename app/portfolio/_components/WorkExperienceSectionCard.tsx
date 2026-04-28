@@ -1,6 +1,6 @@
-import { SectionCardWrapper } from "./SectionCardWrapper";
-import { WorkExperienceSectionCardItem } from "./WorkExperienceSectionCardItem";
-import { workExperiences } from "../_data/job";
+import { workExperiences } from '../_data/job';
+import { SectionCardWrapper } from './SectionCardWrapper';
+import { WorkExperienceSectionCardItem } from './WorkExperienceSectionCardItem';
 
 export const WorkExperienceSectionCard = () => {
   return (

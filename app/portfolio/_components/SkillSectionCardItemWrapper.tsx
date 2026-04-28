@@ -1,6 +1,5 @@
-
-import { ReactNode } from "react";
-import { LucideIcon } from "lucide-react";
+import type { ReactNode } from 'react';
+import type { LucideIcon } from 'lucide-react';
 
 type SkillSectionCardItemWrapperProps = {
   children: ReactNode;
@@ -9,13 +8,24 @@ type SkillSectionCardItemWrapperProps = {
   name: string;
 };
 
-export const SkillSectionCardItemWrapper = ({ children, icon: Icon, type, name }: SkillSectionCardItemWrapperProps) => {
+export const SkillSectionCardItemWrapper = ({
+  children,
+  icon: Icon,
+  type,
+  name,
+}: SkillSectionCardItemWrapperProps) => {
   return (
     <div className="flex gap-3">
-      <div className="mt-1"><Icon className="w-4 h-4 text-primary" /></div>
-      <div className="flex flex-col flex-1">
-        <span className="text-xs font-bold text-foreground uppercase tracking-tight">{name}</span>
-        <span className="text-[10px] w-fit font-bold text-muted-foreground bg-primary/10 px-1 rounded whitespace-nowrap mt-0.5">{type}</span>
+      <div className="mt-1">
+        <Icon className="text-primary h-4 w-4" />
+      </div>
+      <div className="flex flex-1 flex-col">
+        <span className="text-foreground text-xs font-bold tracking-tight uppercase">
+          {name}
+        </span>
+        <span className="text-muted-foreground bg-primary/10 mt-0.5 w-fit rounded px-1 text-[10px] font-bold whitespace-nowrap">
+          {type}
+        </span>
         {children}
       </div>
     </div>

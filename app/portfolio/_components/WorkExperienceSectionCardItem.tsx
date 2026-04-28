@@ -1,34 +1,41 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { ChevronDown, ChevronUp } from "lucide-react";
-import { WorkExperience } from "../_lib/types";
+import { useState } from 'react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
+import type { WorkExperience } from '../_lib/types';
 
 type WorkExperienceSectionCardItemProps = WorkExperience;
 
-export const WorkExperienceSectionCardItem = ({ role, company, date, achievements }: WorkExperienceSectionCardItemProps) => {
+export const WorkExperienceSectionCardItem = ({
+  role,
+  company,
+  date,
+  achievements,
+}: WorkExperienceSectionCardItemProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const hasManyAchievements = achievements.length >= 5;
 
-  const initialAchievements = hasManyAchievements ? achievements.slice(0, 3) : achievements;
+  const initialAchievements = hasManyAchievements
+    ? achievements.slice(0, 3)
+    : achievements;
   const extraAchievements = hasManyAchievements ? achievements.slice(3) : [];
 
   return (
-    <div className="relative pl-6 border-l border-border last:border-0 pb-6 last:pb-0">
-      <div className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-primary shadow-[0_0_8px_rgba(0,255,0,0.5)]" />
-      <h4 className="text-base font-bold text-foreground">{role}</h4>
-      <p className="text-sm text-primary mb-2">
+    <div className="border-border relative border-l pb-6 pl-6 last:border-0 last:pb-0">
+      <div className="bg-primary absolute top-1.5 -left-1.5 h-3 w-3 rounded-full shadow-[0_0_8px_rgba(0,255,0,0.5)]" />
+      <h4 className="text-foreground text-base font-bold">{role}</h4>
+      <p className="text-primary mb-2 text-sm">
         {company}
         <span className="text-muted-secondary-foreground ml-2">{date}</span>
       </p>
       {achievements.length === 1 ? (
-        <p className="text-sm text-muted-foreground leading-relaxed text-pretty">
+        <p className="text-muted-foreground text-sm leading-relaxed text-pretty">
           {achievements[0]}
         </p>
       ) : (
         <>
-          <ul className="text-sm text-muted-foreground list-disc list-outside ml-4 space-y-1">
+          <ul className="text-muted-foreground ml-4 list-outside list-disc space-y-1 text-sm">
             {initialAchievements.map((achievement, index) => (
               <li key={index} className="pl-1 leading-relaxed text-pretty">
                 {achievement}
@@ -40,14 +47,17 @@ export const WorkExperienceSectionCardItem = ({ role, company, date, achievement
             {isExpanded && extraAchievements.length > 0 && (
               <motion.div
                 initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
+                animate={{ height: 'auto', opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
                 className="overflow-hidden"
               >
-                <ul className="text-sm text-muted-foreground list-disc list-outside ml-4 space-y-1 mt-1">
+                <ul className="text-muted-foreground mt-1 ml-4 list-outside list-disc space-y-1 text-sm">
                   {extraAchievements.map((achievement, index) => (
-                    <li key={index + 3} className="pl-1 leading-relaxed text-pretty">
+                    <li
+                      key={index + 3}
+                      className="pl-1 leading-relaxed text-pretty"
+                    >
                       {achievement}
                     </li>
                   ))}
@@ -59,12 +69,18 @@ export const WorkExperienceSectionCardItem = ({ role, company, date, achievement
           {hasManyAchievements && (
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="mt-4 flex items-center gap-2 text-[9px] font-black uppercase tracking-widest text-primary/70 hover:text-primary transition-colors py-1 cursor-pointer group/btn"
+              className="text-primary/70 hover:text-primary group/btn mt-4 flex cursor-pointer items-center gap-2 py-1 text-[9px] font-black tracking-widest uppercase transition-colors"
             >
               {isExpanded ? (
-                <>Collapse Data <ChevronUp className="w-3 h-3 group-hover/btn:-translate-y-0.5 transition-transform" /></>
+                <>
+                  Collapse Data{' '}
+                  <ChevronUp className="h-3 w-3 transition-transform group-hover/btn:-translate-y-0.5" />
+                </>
               ) : (
-                <>Decrypt Remaining Points ({achievements.length - 3} more) <ChevronDown className="w-3 h-3 group-hover/btn:translate-y-0.5 transition-transform" /></>
+                <>
+                  Decrypt Remaining Points ({achievements.length - 3} more){' '}
+                  <ChevronDown className="h-3 w-3 transition-transform group-hover/btn:translate-y-0.5" />
+                </>
               )}
             </button>
           )}

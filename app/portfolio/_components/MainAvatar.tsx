@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
-import { motion, useInView } from "motion/react";
-import { Avatar } from "@/app/_components/avatar";
+import { useEffect, useRef } from 'react';
+import { motion, useInView } from 'motion/react';
+import { Avatar } from '@/app/_components/avatar';
 
 export const MainAvatar = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -27,13 +27,13 @@ export const MainAvatar = () => {
   }, [isFullyInView, isAnyPartOfVideoInView]);
 
   return (
-    <Avatar className="w-24 h-24 border-2 border-primary">
+    <Avatar className="border-primary h-24 w-24 border-2">
       <motion.video
         ref={videoRef}
         src="/videos/avatar-adjust-spectacles.mp4"
         muted
         playsInline
-        className="absolute inset-0 h-full w-full object-cover outline-none border-none"
+        className="absolute inset-0 h-full w-full border-none object-cover outline-none"
       />
     </Avatar>
   );

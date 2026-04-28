@@ -1,5 +1,5 @@
-import { Progress } from "@/app/_components/progress";
-import { Language } from "../_lib/types";
+import { Progress } from '@/app/_components/progress';
+import type { Language } from '../_lib/types';
 
 type LanguageSectionCardItemProps = Language;
 
@@ -10,7 +10,7 @@ export const LanguageSectionCardItem = ({
 }: LanguageSectionCardItemProps) => {
   return (
     <div>
-      <div className="flex justify-between text-sm mb-1">
+      <div className="mb-1 flex justify-between text-sm">
         <span className="text-foreground">{name}</span>
         <span className="text-primary">Lv. {level}</span>
       </div>

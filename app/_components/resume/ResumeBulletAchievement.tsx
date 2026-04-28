@@ -1,12 +1,15 @@
-import { Text, View } from "@react-pdf/renderer";
-import { styles } from "./lib/styles";
+import { Text, View } from '@react-pdf/renderer';
+import { styles } from './lib/styles';
 
 interface ResumeBulletAchievementProps {
   achievement: string;
   isLast?: boolean;
 }
 
-export default function ResumeBulletAchievement({ achievement, isLast = false }: ResumeBulletAchievementProps) {
+export default function ResumeBulletAchievement({
+  achievement,
+  isLast = false,
+}: ResumeBulletAchievementProps) {
   const marginBottom = isLast ? 0 : 1;
 
   return (
@@ -15,5 +18,4 @@ export default function ResumeBulletAchievement({ achievement, isLast = false }:
       <Text style={styles.achievementBulletItemText}>{achievement}</Text>
     </View>
   );
-};
-
+}

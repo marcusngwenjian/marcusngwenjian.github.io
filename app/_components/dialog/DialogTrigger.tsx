@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
 import {
   Children,
-  isValidElement,
   cloneElement,
-  type ReactElement,
+  isValidElement,
   type HTMLProps,
   type MouseEvent,
-} from "react";
-import { useDialogContext } from "./lib/hooks";
+  type ReactElement,
+} from 'react';
+import { useDialogContext } from './lib/hooks';
 
 interface DialogTriggerProps {
   children: ReactElement<HTMLProps<HTMLElement>>;
@@ -28,11 +28,11 @@ export const DialogTrigger = ({ children }: DialogTriggerProps) => {
       openDialog();
 
       // If the original child had its own onClick, call that too (for chaining)
-      if (typeof children.props.onClick === "function") {
+      if (typeof children.props.onClick === 'function') {
         children.props.onClick(e);
       }
     },
 
-    "aria-haspopup": "dialog",
+    'aria-haspopup': 'dialog',
   });
 };
