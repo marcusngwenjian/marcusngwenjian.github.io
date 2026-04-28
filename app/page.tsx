@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { motion } from 'motion/react';
 import { RadialGlow } from '@/app/_components/background';
 import { Button, buttonSize, buttonVariant } from '@/app/_components/button';
-import ResumeDownloadButtonDynamic from '@/app/_components/resume/ResumeDownloadButtonDynamic';
+import { ResumeDownloadButton } from '@/app/_components/resume';
 
 export default function Home() {
   return (
@@ -55,7 +55,7 @@ export default function Home() {
             {/* <Button className="font-bold transition-transform hover:scale-105" size={buttonSize.large}>
               Download Resume
             </Button> */}
-            <ResumeDownloadButtonDynamic />
+            <ResumeDownloadButton />
             <Button variant={buttonVariant.outline} size={buttonSize.large}>
               View Work
             </Button>

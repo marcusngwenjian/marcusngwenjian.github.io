@@ -7,9 +7,9 @@ import { qualifications } from './data/education';
 import { skillset } from './data/skill';
 import { workExperiences } from './data/work';
 import { styles } from './lib/styles';
-import ResumeCompany from './ResumeCompany';
-import ResumeMainPanelSection from './ResumeMainPanelSection';
-import ResumeSidePanelSection from './ResumeSidePanelSection';
+import { ResumeCompany } from './ResumeCompany';
+import { ResumeMainPanelSection } from './ResumeMainPanelSection';
+import { ResumeSidePanelSection } from './ResumeSidePanelSection';
 
 export const ResumePdf = () => {
   return (

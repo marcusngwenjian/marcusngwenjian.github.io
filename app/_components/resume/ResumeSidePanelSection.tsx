@@ -7,14 +7,14 @@ interface ResumeSidePanelSectionProps {
   readonly children: ReactNode;
 }
 
-export default function ResumeSidePanelSection({
+export const ResumeSidePanelSection = ({
   title,
   children,
-}: ResumeSidePanelSectionProps) {
+}: ResumeSidePanelSectionProps) => {
   return (
     <View style={styles.sidePanelSection}>
       <Text style={styles.sectionHeading}>{title}</Text>
       {children}
     </View>
   );
-}
+};

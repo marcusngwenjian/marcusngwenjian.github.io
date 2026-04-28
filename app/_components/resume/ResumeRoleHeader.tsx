@@ -7,11 +7,11 @@ interface ResumeRoleHeaderProps {
   readonly date: string;
 }
 
-export default function ResumeRoleHeader({
+export const ResumeRoleHeader = ({
   name,
   company,
   date,
-}: ResumeRoleHeaderProps) {
+}: ResumeRoleHeaderProps) => {
   return (
     <View style={styles.roleHeader}>
       <View style={styles.roleNameContainer}>
@@ -22,4 +22,4 @@ export default function ResumeRoleHeader({
       <Text style={styles.roleDate}>{date}</Text>
     </View>
   );
-}
+};

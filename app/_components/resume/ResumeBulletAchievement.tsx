@@ -6,10 +6,10 @@ interface ResumeBulletAchievementProps {
   isLast?: boolean;
 }
 
-export default function ResumeBulletAchievement({
+export const ResumeBulletAchievement = ({
   achievement,
   isLast = false,
-}: ResumeBulletAchievementProps) {
+}: ResumeBulletAchievementProps) => {
   const marginBottom = isLast ? 0 : 1;
 
   return (
@@ -18,4 +18,4 @@ export default function ResumeBulletAchievement({
       <Text style={styles.achievementBulletItemText}>{achievement}</Text>
     </View>
   );
-}
+};
