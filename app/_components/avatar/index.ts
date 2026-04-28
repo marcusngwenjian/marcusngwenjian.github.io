@@ -4,3 +4,4 @@ export * from './AvatarFallback';
 export * from './AvatarBadge';
 export * from './AvatarGroup';
 export * from './AvatarGroupCount';
+export * from './lib/constants';

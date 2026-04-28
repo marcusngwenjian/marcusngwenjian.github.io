@@ -2,13 +2,15 @@
 
 import { Avatar as AvatarPrimitive } from '@base-ui/react/avatar';
 import { cn } from '@/app/_utilities/classname';
+import { avatarSize } from './lib/constants';
+import type { AvatarSize } from './lib/types';
 
 type AvatarProps = AvatarPrimitive.Root.Props & {
-  readonly size?: 'default' | 'sm' | 'lg';
+  readonly size?: AvatarSize;
 };
 
 export const Avatar = ({
-  size = 'default',
+  size = avatarSize.default,
   className,
   ...props
 }: AvatarProps) => {
