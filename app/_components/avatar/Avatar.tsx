@@ -4,7 +4,7 @@ import { Avatar as AvatarPrimitive } from '@base-ui/react/avatar';
 import { cn } from '@/app/_utilities/classname';
 
 type AvatarProps = AvatarPrimitive.Root.Props & {
-  size?: 'default' | 'sm' | 'lg';
+  readonly size?: 'default' | 'sm' | 'lg';
 };
 
 export const Avatar = ({

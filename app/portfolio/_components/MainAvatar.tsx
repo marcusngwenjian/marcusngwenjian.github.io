@@ -3,9 +3,11 @@
 import { useEffect, useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { Avatar } from '@/app/_components/avatar';
+import { log } from '@/app/_utilities/log';
 
 export const MainAvatar = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const playPromiseRef = useRef<Promise<void> | null>(null);
   const isFullyInView = useInView(videoRef, { amount: 1 });
   const isAnyPartOfVideoInView = useInView(videoRef, { amount: 0 });
 
@@ -13,16 +15,34 @@ export const MainAvatar = () => {
     const video = videoRef.current;
     if (!video) return;
 
+    const handlePlay = async () => {
+      try {
+        // Store the promise so we can track its status
+        playPromiseRef.current = video.play();
+        await playPromiseRef.current;
+      } catch (error) {
+        // Handle cases where autoplay is blocked or interrupted
+        log.error('Playback interrupted or blocked:', error);
+      } finally {
+        playPromiseRef.current = null;
+      }
+    };
+
+    const handlePause = async (reset = false) => {
+      // If there's an active play promise, wait for it to finish before pausing
+      if (playPromiseRef.current) {
+        await playPromiseRef.current;
+      }
+      video.pause();
+      if (reset) video.currentTime = 0;
+    };
+
     if (isFullyInView) {
-      // PLAY: Video is 100% in sight
-      video.play();
+      handlePlay();
     } else if (isAnyPartOfVideoInView) {
-      // PAUSE: Video is partially visible (not 100% in, but not 100% out)
-      video.pause();
+      handlePause(false);
     } else {
-      // RESET: Video is 100% out of sight
-      video.pause();
-      video.currentTime = 0;
+      handlePause(true);
     }
   }, [isFullyInView, isAnyPartOfVideoInView]);
 
