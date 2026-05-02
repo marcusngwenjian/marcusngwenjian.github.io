@@ -1,4 +1,4 @@
-import type { WorkExperience, WorkRole } from './schema';
+import type { WorkExperience, WorkRole } from '@mnwj/contracts/types';
 
 export const synapxeAssistantLeadEngineer: WorkRole = {
   role: 'Assistant Lead Engineer',
@@ -80,4 +80,9 @@ export const synapxeWorkExperience: WorkExperience = {
 export const micepadWorkExperience: WorkExperience = {
   company: 'Micepad',
   roles: [micepadIntern] as const,
+} as const;
+
+export const envirohubWorkExperience: WorkExperience = {
+  company: 'Enviro-Hub Holdings Ltd',
+  roles: [envirohubIntern] as const,
 } as const;

@@ -2,11 +2,29 @@
 
 import Image from 'next/image';
 import { motion } from 'motion/react';
-import { RadialGlow } from '@/app/_components/background';
-import { Button, buttonSize, buttonVariant } from '@/app/_components/button';
-import { ResumeDownloadButton } from '@/app/_components/resume';
+import { RadialGlow } from '@mnwj/components/background';
+import { Button, buttonSize, buttonVariant } from '@mnwj/components/button';
+import { ResumeDownloadButton } from '@mnwj/components/resume';
+import { dataScope } from '@mnwj/contracts/constants';
+import { certificationService } from '@mnwj/services/certification';
+import { competencyService } from '@mnwj/services/competency';
+import { contactService } from '@mnwj/services/contact';
+import { educationService } from '@mnwj/services/education';
+import { workService } from '@mnwj/services/work';
 
-export default function Home() {
+export default async function Home() {
+  const workExperiences = await workService.getWorkExperiences(
+    dataScope.resume,
+  );
+  const certifications = await certificationService.getCertifications(
+    dataScope.resume,
+  );
+  const qualifications = await educationService.getQualifications(
+    dataScope.resume,
+  );
+  const contacts = await contactService.getContacts(dataScope.resume);
+  const competencies = await competencyService.getCompetencies();
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -55,8 +73,17 @@ export default function Home() {
             {/* <Button className="font-bold transition-transform hover:scale-105" size={buttonSize.large}>
               Download Resume
             </Button> */}
-            <ResumeDownloadButton />
-            <Button variant={buttonVariant.outline} size={buttonSize.large}>
+            <ResumeDownloadButton
+              workExperiences={workExperiences}
+              certifications={certifications}
+              qualifications={qualifications}
+              contacts={contacts}
+              skillset={competencies}
+            />
+            <Button
+              variant={buttonVariant.outline}
+              size={buttonSize.large}
+            >
               View Work
             </Button>
             {/* <button className="px-8 py-4 border border-white/20 hover:border-primary transition-colors rounded-lg font-bold flex items-center gap-2">
@@ -65,7 +92,10 @@ export default function Home() {
           </div>
         </header>
 
-        <div className="flex-1" aria-hidden="true">
+        <div
+          className="flex-1"
+          aria-hidden="true"
+        >
           <div className="relative z-0 mx-auto aspect-square w-full max-w-md">
             <Image
               src="/images/splash-art.webp"

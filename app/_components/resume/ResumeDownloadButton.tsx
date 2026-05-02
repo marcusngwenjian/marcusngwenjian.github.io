@@ -1,9 +1,31 @@
+'use client';
+
 import { useState } from 'react';
 import { pdf } from '@react-pdf/renderer';
 import { Button } from '@/app/_components/button';
+import type {
+  Certification,
+  Contact,
+  EducationQualification,
+  WorkExperience,
+} from './lib/types';
 import { ResumePdf } from './ResumePdf';
 
-export const ResumeDownloadButton = () => {
+interface ResumeDownloadButtonProps {
+  workExperiences: readonly WorkExperience[];
+  certifications: readonly Certification[];
+  qualifications: readonly EducationQualification[];
+  contacts: readonly Contact[];
+  skillset: readonly string[];
+}
+
+export const ResumeDownloadButton = ({
+  workExperiences,
+  certifications,
+  qualifications,
+  contacts,
+  skillset,
+}: ResumeDownloadButtonProps) => {
   const [loading, setLoading] = useState(false);
 
   const handleDownload = async () => {
@@ -11,7 +33,15 @@ export const ResumeDownloadButton = () => {
 
     try {
       // Generate the PDF blob only when the user clicks
-      const blob = await pdf(<ResumePdf />).toBlob();
+      const blob = await pdf(
+        <ResumePdf
+          workExperiences={workExperiences}
+          certifications={certifications}
+          qualifications={qualifications}
+          contacts={contacts}
+          skillset={skillset}
+        />,
+      ).toBlob();
 
       // Create a temporary URL for the blob
       const url = URL.createObjectURL(blob);

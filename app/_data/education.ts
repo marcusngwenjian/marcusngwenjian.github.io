@@ -1,5 +1,5 @@
 import { BookOpen, GraduationCap } from 'lucide-react';
-import type { EducationQualification } from './schema';
+import type { EducationQualification } from '@mnwj/contracts/types';
 
 export const nus: EducationQualification = {
   icon: GraduationCap,

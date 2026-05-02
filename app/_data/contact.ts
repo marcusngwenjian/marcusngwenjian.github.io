@@ -1,4 +1,4 @@
-import type { Contact } from './schema';
+import type { Contact } from '@mnwj/contracts/types';
 
 export const phone: Contact = {
   icon: {

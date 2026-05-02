@@ -19,6 +19,7 @@ const config = {
     '^(react/(.*)$)|^(react$)',
     '^(next/(.*)$)|^(next$)',
     '<THIRD_PARTY_MODULES>',
+    '^@mnwj/',
     '^@?\/',
     '^[./]',
   ],

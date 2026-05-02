@@ -1,6 +1,6 @@
 import { Text, View } from '@react-pdf/renderer';
-import type { WorkRole } from '@/app/_data/schema';
 import { styles } from './lib/styles';
+import type { WorkRole } from './lib/types';
 import { ResumeRole } from './ResumeRole';
 
 interface ResumeCompanyProps {

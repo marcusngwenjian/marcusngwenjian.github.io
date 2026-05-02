@@ -1,20 +1,41 @@
 /* eslint-disable jsx-a11y/alt-text */
 
 import { Document, Image, Link, Page, Text, View } from '@react-pdf/renderer';
-import { certifications } from './data/certification';
-import { contacts } from './data/contact';
-import { qualifications } from './data/education';
-import { skillset } from './data/skill';
-import { workExperiences } from './data/work';
 import { styles } from './lib/styles';
+import type {
+  Certification,
+  Contact,
+  EducationQualification,
+  WorkExperience,
+} from './lib/types';
 import { ResumeCompany } from './ResumeCompany';
 import { ResumeMainPanelSection } from './ResumeMainPanelSection';
 import { ResumeSidePanelSection } from './ResumeSidePanelSection';
 
-export const ResumePdf = () => {
+interface ResumePdfProps {
+  readonly workExperiences: readonly WorkExperience[];
+  readonly certifications: readonly Certification[];
+  readonly qualifications: readonly EducationQualification[];
+  readonly contacts: readonly Contact[];
+  readonly skillset: readonly string[];
+}
+
+export const ResumePdf = ({
+  certifications,
+  contacts,
+  qualifications,
+  skillset,
+  workExperiences,
+}: ResumePdfProps) => {
   return (
-    <Document title="Resume of Marcus Ng Wen Jian" author="Marcus Ng Wen Jian">
-      <Page size="A4" style={styles.page}>
+    <Document
+      title="Resume of Marcus Ng Wen Jian"
+      author="Marcus Ng Wen Jian"
+    >
+      <Page
+        size="A4"
+        style={styles.page}
+      >
         {/* Main Content appears first in the PDF stream */}
         <View style={styles.mainPanel}>
           <Text style={styles.name}>Marcus Ng Wen Jian</Text>
@@ -48,10 +69,19 @@ export const ResumePdf = () => {
         <View style={styles.sidePanel}>
           <ResumeSidePanelSection title="Contact">
             {contacts.map((contact) => (
-              <View key={contact.label} style={styles.contactRow}>
-                <Image src={contact.icon.png} style={styles.contactIcon} />
+              <View
+                key={contact.label}
+                style={styles.contactRow}
+              >
+                <Image
+                  src={contact.icon.png}
+                  style={styles.contactIcon}
+                />
                 <Text style={styles.ghostText}>{contact.alt}:</Text>
-                <Link href={contact.url} style={styles.contactLink}>
+                <Link
+                  href={contact.url}
+                  style={styles.contactLink}
+                >
                   {contact.label}
                 </Link>
               </View>
@@ -62,7 +92,10 @@ export const ResumePdf = () => {
           <ResumeSidePanelSection title="Skills">
             <View style={styles.skillContainer}>
               {skillset.map((skill) => (
-                <View key={skill} style={styles.skillTag}>
+                <View
+                  key={skill}
+                  style={styles.skillTag}
+                >
                   <Text>{skill}</Text>
                 </View>
               ))}
