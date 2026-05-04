@@ -16,5 +16,6 @@ export default function Template({ children }: TemplateProps) {
     >
       {children}
     </motion.div>
+    // <>{children}</>
   );
 }

@@ -1,7 +1,4 @@
-'use client';
-
 import Image from 'next/image';
-import { motion } from 'motion/react';
 import { RadialGlow } from '@mnwj/components/background';
 import { Button, buttonSize, buttonVariant } from '@mnwj/components/button';
 import { ResumeDownloadButton } from '@mnwj/components/resume';
@@ -13,25 +10,22 @@ import { educationService } from '@mnwj/services/education';
 import { workService } from '@mnwj/services/work';
 
 export default async function Home() {
-  const workExperiences = await workService.getWorkExperiences(
-    dataScope.resume,
-  );
-  const certifications = await certificationService.getCertifications(
-    dataScope.resume,
-  );
-  const qualifications = await educationService.getQualifications(
-    dataScope.resume,
-  );
-  const contacts = await contactService.getContacts(dataScope.resume);
-  const competencies = await competencyService.getCompetencies();
+  const [
+    workExperiences,
+    certifications,
+    qualifications,
+    contacts,
+    competencies,
+  ] = await Promise.all([
+    workService.getWorkExperiences(dataScope.resume),
+    certificationService.getCertifications(dataScope.resume),
+    educationService.getQualifications(dataScope.resume),
+    contactService.getContacts(dataScope.resume),
+    competencyService.getCompetencies(),
+  ]);
 
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden p-8 md:flex-row lg:p-24"
-    >
+    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden p-8 md:flex-row lg:p-24">
       <RadialGlow />
 
       <div className="flex w-full max-w-7xl flex-col items-center gap-12 md:flex-row">
@@ -108,6 +102,6 @@ export default async function Home() {
           </div>
         </div>
       </div>
-    </motion.section>
+    </div>
   );
 }
