@@ -1,5 +1,3 @@
-import type { LucideIcon } from 'lucide-react';
-
 export type WorkRole = {
   readonly role: string;
   readonly date: string;
@@ -20,7 +18,6 @@ export type Certification = {
 };
 
 export type EducationQualification = {
-  readonly icon: LucideIcon;
   readonly institution: string;
   readonly qualification: string;
 };
